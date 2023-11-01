@@ -7,3 +7,4 @@ function M.load()
 	vim.g.colors_name = "moonwalk"
 end
 
+return M
