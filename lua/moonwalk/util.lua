@@ -9,6 +9,7 @@ end
 function M.load_schemes()
 	local names = {
 		'base',
+		'syntax',
 	}
 	local palette = M.get_palette()
 	for _, name in ipairs(names) do
