@@ -38,13 +38,14 @@ local function base(opts)
 		SpecialKey = { fg = c.fg_soft },
 
 		TabLine = { bg = c.bg, fg = c.bg2, underline = true },
-		TabLineSel = { fg = c.blue, bg = c.none, bold = true, underline = true },
+		TabLineSel = { fg = c.blue_cool, bg = c.none, bold = true, underline = true },
 		TabLineFill = { fg = c.bg2, bg = c.bg, underline = true },
 
-		WinBar = { fg = c.blue_bold },
+		WinBar = { fg = c.blue_cool, underdashed = true },
 		WinBarNC = {
-			fg = c.fg_soft,
+			fg = c.bg2,
 			bg = c.none,
+			underdashed = true,
 		},
 
 		StatusLine = { fg = c.fg, bg = c.bg2 },
@@ -76,6 +77,7 @@ local function base(opts)
 
 		NonText = { fg = c.fg_softer, bg = c.none },
 		EndOfBuffer = { fg = c.fg_softer, bg = c.none },
+		Whitespace = { fg = c.fg_softer, bg = c.none },
 		SignColumn = { bg = c.none },
 
 		DiffAdd = { bg = c.diff_add },
@@ -112,6 +114,8 @@ local function base(opts)
 		CursorColumn = { bg = c.current_line },
 		ColorColumn = { bg = c.red_bg },
 		CursorLine = { bg = c.current_line },
+		CursorLineFold = { bg = c.current_line },
+		CursorLineSign = { bg = c.current_line },
 		MatchParen = { fg = c.blue_bold, bg = c.none, bold = true },
 
 		SpellBad = { undercurl = true },
@@ -122,6 +126,8 @@ local function base(opts)
 		Terminal = { fg = c.fg_bold, bg = c.bg },
 		Directory = { fg = c.blue, bg = c.none },
 		QuickFixLine = { bg = c.current_line },
+
+		MsgArea = { bg = c.bg2 }
 	}
 end
 
