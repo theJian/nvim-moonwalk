@@ -112,7 +112,7 @@ local function base(opts)
 		VisualNOS = { fg = c.visual, bg = c.none },
 
 		CursorColumn = { bg = c.current_line },
-		ColorColumn = { bg = c.red_bg },
+		ColorColumn = { bg = c.color_column },
 		CursorLine = { bg = c.current_line },
 		CursorLineFold = { bg = c.current_line },
 		CursorLineSign = { bg = c.current_line },
