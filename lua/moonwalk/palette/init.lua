@@ -86,7 +86,7 @@ M.default = {
 	current_line = C.gray_lighter,
 
 	term_black = '#e4e2e0',
-	term_bright_black = C.blue_lightest,
+	term_bright_black = C.gray,
 
 	term_red = C.secondary_dark,
 	term_bright_red = C.secondary,
