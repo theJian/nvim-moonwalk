@@ -89,9 +89,9 @@ local function base(opts)
 		DiffChanged = { fg = c.diff_text },
 		DiffOldFile = { fg = c.diff_removed },
 		DiffNewFile = { fg = c.diff_added },
-		DiffFile = { fg = c.blue },
-		DiffLine = { fg = c.blue },
-		DiffIndexLine = { fg = c.blue },
+		DiffFile = { fg = c.purple },
+		DiffLine = { fg = c.purple },
+		DiffIndexLine = { fg = c.purple },
 
 		ErrorMsg = { fg = c.red, bg = c.red_bg },
 		WarningMsg  = { fg = c.gold, bg = c.gold_bg },
@@ -127,7 +127,7 @@ local function base(opts)
 		Directory = { fg = c.blue, bg = c.none },
 		QuickFixLine = { bg = c.current_line },
 
-		MsgArea = { bg = c.bg2 }
+		MsgArea = { bg = c.current_line }
 	}
 end
 

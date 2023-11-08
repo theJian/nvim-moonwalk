@@ -21,17 +21,17 @@ local function syntax(opts)
 		Keyword = { fg = c.blue_cool },
 		Exception = { fg = c.gold },
 
-		PreProc = { fg = c.purple },
-		Include = { fg = c.purple },
-		Define = { fg = c.purple },
+		PreProc = { fg = c.blue_alt },
+		Include = { fg = c.blue_alt },
+		Define = { fg = c.blue_alt },
 		Macro = { fg = c.gold_bold },
-		PreCondit = { fg = c.purple_bold },
+		PreCondit = { fg = c.blue_alt_bold },
 
 
-		Type = { fg = c.blue_alt },
-		StorageClass = { fg = c.blue_alt },
-		Structure = { fg = c.blue_alt },
-		Typedef = { fg = c.blue_alt },
+		Type = { fg = c.purple },
+		StorageClass = { fg = c.purple_bold },
+		Structure = { fg = c.purple },
+		Typedef = { fg = c.purple },
 
 		Special = { fg = c.red_bolder },
 		SpecialChar = { fg = c.red_bolder },
