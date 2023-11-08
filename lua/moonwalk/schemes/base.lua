@@ -86,7 +86,7 @@ local function base(opts)
 		DiffText = { bg = c.diff_text },
 		DiffAdded = { fg = c.diff_added },
 		DiffRemoved = { fg = c.diff_removed },
-		DiffChanged = { fg = c.diff_change },
+		DiffChanged = { fg = c.diff_text },
 		DiffOldFile = { fg = c.diff_removed },
 		DiffNewFile = { fg = c.diff_added },
 		DiffFile = { fg = c.blue },

@@ -74,8 +74,8 @@ M.default = {
 
 	diff_add = C.green_lighter,
 	diff_delete = C.secondary_light,
-	diff_change = C.gold_lighter,
-	diff_text = C.gold_lightest,
+	diff_change = C.green_lightest,
+	diff_text = C.green_lighter,
 	diff_added = C.green,
 	diff_removed = C.secondary_darkest,
 

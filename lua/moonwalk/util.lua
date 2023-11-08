@@ -4,7 +4,7 @@ local M = {}
 
 function M.get_palette()
 	if vim.env.MOONWALK_DEV then package.loaded['moonwalk.palette'] = nil end
-	local palette = require 'moonwalk.palette'
+	local palette = require'moonwalk.palette'
 	return palette
 end
 
