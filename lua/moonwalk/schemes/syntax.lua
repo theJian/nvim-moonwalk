@@ -37,7 +37,7 @@ local function syntax(opts)
 		SpecialChar = { fg = c.red_bolder },
 		Tag = { fg = c.red_bold },
 		Delimiter = { fg = c.fg },
-		SpecialComment = { fg = c.red },
+		SpecialComment = { fg = c.green_soft },
 		Debug = { fg = c.red_bolder },
 
 		Underlined = { fg = c.red_bold },

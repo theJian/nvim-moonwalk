@@ -34,7 +34,7 @@ local function base(opts)
 		Italic = { italic = true },
 		Bold = { bold = true },
 
-		Conceal = { fg = c.fg_soft },
+		Conceal = { fg = c.green_soft },
 		SpecialKey = { fg = c.fg_soft },
 
 		TabLine = { bg = c.bg, fg = c.bg2, underline = true },

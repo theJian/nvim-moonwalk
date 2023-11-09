@@ -71,6 +71,7 @@ M.default = {
 	gold_bold = C.gold_dark,
 	gold = C.gold_darkest,
 	gold_bg = C.gold_lightest,
+	green_soft = C.green_light,
 	green = C.green_dark,
 	green_bold = C.green,
 	purple_bold = C.purple_light,
