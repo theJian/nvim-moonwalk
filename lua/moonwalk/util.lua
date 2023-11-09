@@ -33,7 +33,7 @@ function M.live_reloading()
 			callback = function()
 				local theme = vim.g.colors_name
 				if string.match(theme, 'moonwalk') then
-					vim.cmd("colorscheme moonwalk")
+					vim.cmd('colorscheme moonwalk')
 				end
 			end,
 		})

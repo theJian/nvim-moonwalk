@@ -24,10 +24,13 @@ local C = {
 	secondary_dark = '#c62d1f',
 	secondary_light = '#e59892',
 	secondary_lightest = '#f9e0de',
+	gold_darkest = '#945400',
+	gold_dark = '#B76801',
 	gold = '#ff9d1e',
 	gold_light = '#f9aa43',
 	gold_lighter = '#ffc375',
 	gold_lightest = '#ffebd1',
+	green_dark = '#174A24',
 	green = '#2e8540',
 	green_light = '#4aa564',
 	green_lighter = '#94bfa2',
@@ -36,22 +39,22 @@ local C = {
 	blue_light = '#4773aa',
 	blue_lighter = '#8ba6ca',
 	blue_lightest = '#dce4ef',
-	focus = '#aeb0b5',
-	purple = '#4c2c92'
+	purple_light = '#6F46C8',
+	purple = '#4c2c92',
 }
 
 M.default = {
 	none = 'NONE',
-	bg = '#e4e2e0',
+	bg = C.gray_warm_light,
 	bg2 = C.blue_lighter,
 	bg_popup = C.blue_lightest,
 	bg_popup_line = C.primary_alt_light,
-	fg = '#061f4a',
-	fg_bold = '#212121',
+	fg = C.primary_darkest,
+	fg_bold = C.base,
 	fg_soft = C.gray_warm_dark,
 	fg_softer = C.gray_light,
 
-	white = '#ffffff',
+	white = C.white,
 	blue_bold = C.primary,
 	blue = C.primary_darker,
 	blue_bg = C.primary_alt_lightest,
@@ -64,13 +67,14 @@ M.default = {
 	red_soft = C.secondary_light,
 	red = C.secondary_darkest,
 	red_bg = C.secondary_lightest,
-	gold_bold = '#726012',
-	gold = '#804800',
-	gold_bg = '#ffebd1',
-	green = '#174A24',
+	gold_bolder = C.gold,
+	gold_bold = C.gold_dark,
+	gold = C.gold_darkest,
+	gold_bg = C.gold_lightest,
+	green = C.green_dark,
 	green_bold = C.green,
-	purple_bold = '#6F46C8',
-	purple = '#4c2c92',
+	purple_bold = C.purple_light,
+	purple = C.purple,
 
 	diff_add = C.green_lighter,
 	diff_delete = C.secondary_light,
@@ -85,29 +89,29 @@ M.default = {
 	color_column = C.gray_lightest,
 	current_line = C.gray_lighter,
 
-	term_black = '#e4e2e0',
+	term_black = C.gray_warm_light,
 	term_bright_black = C.gray,
 
 	term_red = C.secondary_dark,
 	term_bright_red = C.secondary,
 
-	term_green = '#174A24',
+	term_green = C.green_dark,
 	term_bright_green = C.green,
 
-	term_yellow = '#804800',
-	term_bright_yellow = '#726012',
+	term_yellow = C.gold_darkest,
+	term_bright_yellow = C.gold_dark,
 
 	term_blue = C.primary_darker,
 	term_bright_blue = C.primary,
 
-	term_purple = '#4c2c92',
-	term_bright_purple = '#6F46C8',
+	term_purple = C.purple,
+	term_bright_purple = C.purple_light,
 
 	term_cyan = C.blue,
 	term_bright_cyan = C.blue_light,
 
-	term_white = '#061f4a',
-	term_bright_white = '#212121',
+	term_white = C.primary_darkest,
+	term_bright_white = C.base,
 }
 
 return M
