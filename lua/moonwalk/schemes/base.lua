@@ -62,8 +62,8 @@ local function base(opts)
 		CursorIM = { link = "Cursor" },
 		lCursor = { link = "Cursor" },
 
-		CursorLineNr = { fg = c.red_bolder, bg = c.current_line },
-		LineNr = { fg = c.red_soft, bg = c.none },
+		CursorLineNr = { fg = c.fg_bold, bg = c.current_line },
+		LineNr = { fg = c.fg_softer, bg = c.none },
 
 		WinSeparator = {
 			fg = c.bg2,

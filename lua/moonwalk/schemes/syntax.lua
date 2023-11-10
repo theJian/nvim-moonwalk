@@ -13,12 +13,12 @@ local function syntax(opts)
 		Identifier = { fg = c.blue },
 		Function = { fg = c.blue_bold },
 
-		Statement = { fg = c.blue_cool },
+		Statement = { fg = c.fg },
 		Conditional = { fg = c.red_bold },
 		Repeat = { fg = c.blue_cool },
 		Label = { fg = c.blue_cool_bold },
-		Operator = { fg = c.none },
-		Keyword = { fg = c.blue_cool },
+		Operator = { fg = c.fg },
+		Keyword = { fg = c.fg },
 		Exception = { fg = c.gold },
 
 		PreProc = { fg = c.blue_alt, italic = true },
@@ -37,7 +37,7 @@ local function syntax(opts)
 		SpecialChar = { fg = c.red_bolder },
 		Tag = { fg = c.red_bold },
 		Delimiter = { fg = c.fg },
-		SpecialComment = { fg = c.green_soft },
+		SpecialComment = { fg = c.red_soft },
 		Debug = { fg = c.red_bolder },
 
 		Underlined = { fg = c.red_bold },

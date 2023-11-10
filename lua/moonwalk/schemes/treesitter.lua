@@ -33,7 +33,7 @@ local function treesitter(opts)
 
 		-- functions
 		["@function"] = { link = 'Function' },         -- function definitions
-		["@function.builtin"] = { fg = c.blue_cool }, -- built-in functions
+		["@function.builtin"] = { fg = c.blue_alt }, -- built-in functions
 		["@function.call"] = { fg = c.blue_alt },    -- function calls
 		["@function.macro"] = { link = 'Macro' },   -- preprocessor macros
 
@@ -46,8 +46,8 @@ local function treesitter(opts)
 		-- keywords
 		["@keyword"] = { link = 'Keyword' },             -- various keywords
 		["@keyword.coroutine"] = { fg = c.green_bold, italic = true },   -- keywords related to coroutines (e.g. `go` in Go, `async/await` in Python)
-		["@keyword.function"] = { fg = c.blue_cool, bold = true },    -- keywords that define a function (e.g. `func` in Go, `def` in Python)
-		["@keyword.operator"] = { fg = c.none, italic = true },    -- operators that are English words (e.g. `and` / `or`)
+		["@keyword.function"] = { fg = c.fg_bold, bold = true },    -- keywords that define a function (e.g. `func` in Go, `def` in Python)
+		["@keyword.operator"] = { fg = c.fg_bold, italic = true },    -- operators that are English words (e.g. `and` / `or`)
 		["@keyword.return"] = { fg = c.gold_bold, bold = true },      -- keywords like `return` and `yield`
 
 		["@conditional"] = { link = 'Conditional' },         -- keywords related to conditionals (e.g. `if` / `else`)
@@ -67,8 +67,8 @@ local function treesitter(opts)
 
 		["@storageclass"] = { link = 'StorageClass' },    -- modifiers that affect storage in memory or life-time
 		["@attribute"] = { fg = c.gold },       -- attribute annotations (e.g. Python decorators)
-		["@field"] = { fg = c.blue },           -- object and struct fields
-		["@property"] = { fg = c.blue },        -- similar to `@field`
+		["@field"] = { fg = c.fg },           -- object and struct fields
+		["@property"] = { fg = c.fg },        -- similar to `@field`
 
 		-- identifiers
 		["@variable"] = { link = 'Identifier' },         -- various variable names
@@ -92,7 +92,7 @@ local function treesitter(opts)
 		["@text.uri"] = { link = 'Tag' },              -- URIs (e.g. hyperlinks)
 		["@text.math"] = { fg = c.blue_bold },             -- math environments (e.g. `$ ... $` in LaTeX)
 		["@text.environment"] = { fg = c.green },      -- text environments of markup languages
-["@text.environment.name"] = { fg = c.green_bold }, -- text indicating the type of an environment
+		["@text.environment.name"] = { fg = c.green_bold }, -- text indicating the type of an environment
 		["@text.reference"] = { fg = c.blue_cool },        -- text references, footnotes, citations, etc.
 
 		["@text.literal"] = { fg = c.fg_bold },          -- literal or verbatim text (e.g., inline code)
@@ -107,7 +107,7 @@ local function treesitter(opts)
 
 		-- tags
 		["@tag"] = { fg = c.purple, bold = true },           -- XML tag names
-		["@tag.attribute"] = { fg = c.blue_alt }, -- XML tag attributes
+		["@tag.attribute"] = { fg = c.blue }, -- XML tag attributes
 		["@tag.delimiter"] = { fg = c.fg }, -- XML tag delimiters
 
 		-- conceal
