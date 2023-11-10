@@ -94,8 +94,8 @@ local function base(opts)
 		DiffIndexLine = { fg = c.purple },
 
 		ErrorMsg = { fg = c.red, bg = c.red_bg },
-		WarningMsg  = { fg = c.gold, bg = c.gold_bg },
-		Question = { fg = c.blue, bg = c.blue_bg },
+		WarningMsg  = { fg = c.fg_bold, bg = c.gold_bg },
+		Question = { fg = c.fg_bold, bg = c.blue_bg },
 
 		Pmenu = { fg = c.none, bg = c.bg_popup },
 		PmenuSel = { fg = c.fg_bold, bg = c.bg_popup_line, bold = true, blend = 0 },
