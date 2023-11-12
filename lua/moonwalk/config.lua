@@ -5,8 +5,12 @@ M.default = {
 	transparent = false,
 }
 
-function M.user_config(opts)
-	return vim.tbl_deep_extend("force", M.default, opts)
+function M.set(opts)
+	M.current = vim.tbl_deep_extend("force", M.get(), opts)
+end
+
+function M.get()
+	return M.current or M.default
 end
 
 return M
