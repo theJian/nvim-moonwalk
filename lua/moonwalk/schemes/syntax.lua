@@ -1,5 +1,4 @@
-local function syntax(opts)
-	local c = opts.colors
+local function syntax(opts, c)
 	return {
 		Comment = { fg = c.fg_soft, italic = true },
 

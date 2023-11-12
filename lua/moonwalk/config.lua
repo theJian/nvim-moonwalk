@@ -5,6 +5,8 @@ M.default = {
 	transparent = false,
 }
 
-function M.user_config(opts) return vim.tbl_deep_extend("force", M.default, opts or {}) end
+function M.user_config(opts)
+	return vim.tbl_deep_extend("force", M.default, opts)
+end
 
 return M

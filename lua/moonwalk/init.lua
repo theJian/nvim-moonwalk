@@ -5,7 +5,7 @@ local config = require 'moonwalk.config'
 local M = {}
 
 function M.load(opts)
-	opts = config.user_config(opts)
+	opts = config.user_config(opts or {})
 	if vim.g.colors_name then vim.cmd.highlight 'clear' end
 	if vim.fn.exists 'syntax_on' then vim.cmd.syntax 'reset' end
 	vim.o.termguicolors = true

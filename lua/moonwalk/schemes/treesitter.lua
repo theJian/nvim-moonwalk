@@ -1,5 +1,4 @@
-local function treesitter(opts)
-	local c = opts.colors
+local function treesitter(opts, c)
 	return {
 		-- https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md
 

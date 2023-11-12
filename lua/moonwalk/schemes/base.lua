@@ -1,5 +1,4 @@
-local function base(opts)
-	local c = opts.colors
+local function base(opts, c)
 	return {
 		Normal = { fg = c.fg, bg = opts.transparent and c.none or c.bg },
 		NormalNC = {

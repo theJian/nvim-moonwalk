@@ -115,4 +115,8 @@ M.default = {
 	term_bright_white = C.base,
 }
 
+function M.get_colors()
+	return M.default
+end
+
 return M
