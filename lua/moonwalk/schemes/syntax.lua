@@ -27,7 +27,7 @@ local function syntax(opts, c)
 		PreCondit = { fg = c.green_bold },
 
 
-		Type = { fg = c.purple, italic = true },
+		Type = { fg = c.purple },
 		StorageClass = { fg = c.purple_bold },
 		Structure = { fg = c.purple },
 		Typedef = { fg = c.purple },

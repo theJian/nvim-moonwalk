@@ -32,7 +32,7 @@ local function treesitter(opts, c)
 
 		-- functions
 		["@function"] = { link = 'Function' },         -- function definitions
-		["@function.builtin"] = { fg = c.blue_alt }, -- built-in functions
+		["@function.builtin"] = { fg = c.blue_alt, italic = true }, -- built-in functions
 		["@function.call"] = { fg = c.blue_alt },    -- function calls
 		["@function.macro"] = { link = 'Macro' },   -- preprocessor macros
 
@@ -60,9 +60,9 @@ local function treesitter(opts, c)
 
 		-- types
 		["@type"] = { link = 'Type' },            -- type or class definitions and annotations
-		["@type.builtin"] = { link = 'Type' },    -- built-in types
+		["@type.builtin"] = { fg = c.purple, italic = true },    -- built-in types
 		["@type.definition"] = { fg = c.blue }, -- identifiers in type definitions (e.g. `typedef <type> <identifier>` in C)
-		["@type.qualifier"] = { link = 'Type' },  -- type qualifiers (e.g. `const`)
+		["@type.qualifier"] = { fg = c.fg, italic = true },  -- type qualifiers (e.g. `const`)
 
 		["@storageclass"] = { link = 'StorageClass' },    -- modifiers that affect storage in memory or life-time
 		["@attribute"] = { fg = c.gold },       -- attribute annotations (e.g. Python decorators)
@@ -71,10 +71,10 @@ local function treesitter(opts, c)
 
 		-- identifiers
 		["@variable"] = { link = 'Identifier' },         -- various variable names
-		["@variable.builtin"] = { fg = c.fg }, -- built-in variable names (e.g. `this`)
+		["@variable.builtin"] = { fg = c.fg, italic = true }, -- built-in variable names (e.g. `this`)
 
 		["@constant"] = { link = 'Constant' },         -- constant identifiers
-		["@constant.builtin"] = { fg = c.purple, bold = true }, -- built-in constant values
+		["@constant.builtin"] = { fg = c.purple, italic = true }, -- built-in constant values
 		["@constant.macro"] = { fg = red, bold = true },   -- constants defined by the preprocessor
 
 		["@namespace"] = { fg = c.purple_bold },        -- modules or namespaces

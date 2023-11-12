@@ -74,6 +74,7 @@ M.default = {
 	green_soft = C.green_light,
 	green = C.green_dark,
 	green_bold = C.green,
+	green_bg = C.green_lightest,
 	purple_bold = C.purple_light,
 	purple = C.purple,
 
