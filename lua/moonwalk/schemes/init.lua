@@ -5,6 +5,7 @@ M.exports = {
 	'syntax',
 	'treesitter',
 	'lsp',
+	'diagnostic',
 }
 
 return M
