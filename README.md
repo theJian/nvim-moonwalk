@@ -12,7 +12,7 @@ __Terminal colors__
 
 ## ✨ Features
 
-- Treesitter highlights
+- Treesitter, lsp, and diagnostic highlights
 - Terminal colors
 - Lualine support
 - Extra configurations for other applications
