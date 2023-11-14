@@ -1,13 +1,13 @@
 local M = {}
 
 M.exports = {
-	'base',
-	'syntax',
-	'treesitter',
-	'lsp',
-	'diagnostic',
+  'base',
+  'syntax',
+  'treesitter',
+  'lsp',
+  'diagnostic',
 
-	'misc',
+  'misc',
 }
 
 return M
