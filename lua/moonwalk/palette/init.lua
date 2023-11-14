@@ -55,6 +55,7 @@ M.default = {
 	fg_softer = C.gray_light,
 
 	white = C.white,
+	blue_bolder = C.primary_alt,
 	blue_bold = C.primary,
 	blue = C.primary_darker,
 	blue_bg = C.primary_alt_lightest,

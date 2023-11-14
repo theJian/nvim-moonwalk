@@ -15,18 +15,18 @@ local function base(opts, c)
 
 		FloatTitle = {
 			fg = c.fg_bold,
-			bg = c.bg,
+			bg = c.bg_popup,
 			blend = vim.o.winblend or 0,
 			bold = true,
 		},
 		FloatBorder = {
 			fg = c.fg,
-			bg = c.bg,
+			bg = c.bg_popup,
 			blend = vim.o.winblend or 0,
 		},
 		NormalFloat = {
 			fg = c.fg,
-			bg = c.bg,
+			bg = c.bg_popup,
 			blend = vim.o.winblend or 0,
 		},
 
