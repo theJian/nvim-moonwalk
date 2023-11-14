@@ -31,6 +31,19 @@ __Screenshots__
 ## ✨ Features
 
 - Treesitter, lsp, and diagnostic highlights
-- Terminal colors
+- Terminal color
 - Lualine support
 - Extra configurations for other applications
+
+
+## 🛠 Options
+```lua
+require'moonwalk'.setup({
+  transparent = false,      -- Boolean, default: false. Toggle transparency.
+  terminal_color = true,    -- Boolean, default: true. Toggle terminal color.
+})
+```
+
+## 🙌 Contributing
+
+TBD

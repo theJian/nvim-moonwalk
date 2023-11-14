@@ -18,8 +18,8 @@ function M.load()
   if vim.env.MOONWALK_DEV then
     util.live_reloading()
   end
-  if opts.terminal_colors then
-    util.set_terminal_colors()
+  if opts.terminal_color then
+    util.set_terminal_color()
   end
 end
 

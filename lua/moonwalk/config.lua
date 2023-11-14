@@ -1,7 +1,7 @@
 local M = {}
 
 M.default = {
-  terminal_colors = true,
+  terminal_color = true,
   transparent = false,
 }
 

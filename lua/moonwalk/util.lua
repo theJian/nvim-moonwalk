@@ -44,7 +44,7 @@ function M.live_reloading()
   end
 end
 
-function M.set_terminal_colors()
+function M.set_terminal_color()
   local c = M.get_palette().get_colors()
   vim.g.terminal_color_0 = c.term_black
   vim.g.terminal_color_8 = c.term_bright_black
