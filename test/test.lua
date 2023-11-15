@@ -10,9 +10,8 @@ try(function()
 	local cwd = vim.api.nvim_call_function('getcwd', {})
 	local testdir = cwd .. '/test'
 	local runtimepath = vim.api.nvim_get_option('runtimepath')
-	local packpath = vim.api.nvim_get_option('packpath')
 	vim.api.nvim_set_option('runtimepath', table.concat({cwd, runtimepath}, ','))
-	vim.api.nvim_set_option('packpath', table.concat({testdir, packpath}, ','))
+	package.path = package.path .. string.format(';%s/?.lua', testdir)
 
 	local test_modules = vim.fn.glob(testdir .. '/*-spec.lua', 0, 1)
 	local test_result = { total = 0, failed = 0 }
@@ -60,8 +59,7 @@ try(function()
 		end
 
 		for _, module in ipairs(test_modules) do
-			local test_module = loadfile(module)
-			test_module()
+			loadfile(module)()
 		end
 
 		print_summary()

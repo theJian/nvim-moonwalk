@@ -1,3 +1,3 @@
 .PHONY: test
 test:
-	nvim -l test/test.lua
+	nvim --clean --headless -l test/test.lua
