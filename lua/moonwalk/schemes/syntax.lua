@@ -1,6 +1,6 @@
 local function syntax(opts, c)
   return {
-    Comment = { fg = c.fg_soft, italic = true },
+    Comment = { fg = c.fg_softer, italic = true },
 
     Constant = { fg = c.red },
     String = { fg = c.green },
