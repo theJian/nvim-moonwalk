@@ -13,7 +13,7 @@ return {
   terminal = { a = { fg = c.white, bg = c.green, gui = 'bold' } },
   inactive = {
     a = { fg = c.blue_cool, bg = c.bg2, gui = 'bold' },
-    b = { fg = c.fg_softer, bg = c.gold_bg },
-    c = { fg = c.fg_softer, bg = c.bg },
+    b = { fg = c.fg_softest, bg = c.gold_bg },
+    c = { fg = c.fg_softest, bg = c.bg },
   },
 }

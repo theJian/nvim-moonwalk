@@ -62,7 +62,7 @@ local function base(opts, c)
     lCursor = { link = 'Cursor' },
 
     CursorLineNr = { fg = c.fg_bold, bg = c.current_line },
-    LineNr = { fg = c.fg_softer, bg = c.none },
+    LineNr = { fg = c.fg_softest, bg = c.none },
 
     WinSeparator = {
       fg = c.bg2,
@@ -74,9 +74,9 @@ local function base(opts, c)
     Folded = { fg = c.fg_soft, bg = c.none, italic = true },
     FoldColumn = { fg = c.blue_bold, bg = c.none },
 
-    NonText = { fg = c.fg_softer, bg = c.none },
-    EndOfBuffer = { fg = c.fg_softer, bg = c.none },
-    Whitespace = { fg = c.fg_softer, bg = c.none },
+    NonText = { fg = c.fg_softest, bg = c.none },
+    EndOfBuffer = { fg = c.fg_softest, bg = c.none },
+    Whitespace = { fg = c.fg_softest, bg = c.none },
     SignColumn = { bg = c.none },
 
     DiffAdd = { bg = c.diff_add },
