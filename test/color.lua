@@ -49,7 +49,6 @@ function M.APCAcontrast(txtY, bgY)
 
 	local SAPC = 0.0
 	local outputContrast = 0.0
-	local polCat = 'BoW'
 
 	-- //////////   BLACK SOFT CLAMP   ////////////////////////////////////////
 	-- // Soft clamps Y for either color if it is near black.
@@ -76,7 +75,6 @@ function M.APCAcontrast(txtY, bgY)
 	else
 		-- For reverse polarity, light text on dark (WoB)
 		-- WoB should always return negative value.
-		polCat = 'WoB'
 
 		SAPC = (math.pow(bgY, SA98G.revBG) -
 				  math.pow(txtY, SA98G.revTXT)) * SA98G.scaleWoB

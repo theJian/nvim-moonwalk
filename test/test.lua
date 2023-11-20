@@ -59,6 +59,7 @@ try(function()
 		end
 
 		for _, module in ipairs(test_modules) do
+			print('> ' .. vim.fn.fnamemodify(module, ':t'))
 			loadfile(module)()
 		end
 
