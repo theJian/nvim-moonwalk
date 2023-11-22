@@ -115,7 +115,7 @@ local function base(opts, c)
     CursorLine = { bg = c.current_line },
     CursorLineFold = { bg = c.current_line },
     CursorLineSign = { bg = c.current_line },
-    MatchParen = { fg = c.blue_bolder, bg = c.none, bold = true },
+    MatchParen = { bg = c.blue_bolder, bold = true },
 
     SpellBad = { undercurl = true },
     SpellCap = { undercurl = true },
