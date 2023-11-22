@@ -89,8 +89,7 @@ M.default = {
 
   search = C.gold_lighter,
   inc_search = C.gold_light,
-  visual = C.blue_lighter,
-  color_column = C.gray_lightest,
+  visual = C.gold_lightest,
   current_line = C.gray_lighter,
 
   term_black = C.gray_warm_light,
