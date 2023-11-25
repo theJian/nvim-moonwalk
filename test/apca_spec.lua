@@ -9,10 +9,10 @@ local contrast_result = {63.056469930209424, -68.54146436644962, 58.146262578561
 
 for i=1,#color-1,2 do
 	test(string.format('Lc value for %s and %s', color[i], color[i+1]), function ()
-		expect(contrast_result[i] == calc_apca(color[i], color[i+1]))
+		expect(contrast_result[i]).toBe(calc_apca(color[i], color[i+1]))
 	end)
 
 	test(string.format('Lc value for %s and %s', color[i+1], color[i]), function ()
-		expect(contrast_result[i+1] == calc_apca(color[i+1], color[i]))
+		expect(contrast_result[i+1]).toBe(calc_apca(color[i+1], color[i]))
 	end)
 end

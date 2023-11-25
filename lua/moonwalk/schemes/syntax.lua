@@ -41,7 +41,7 @@ local function syntax(opts, c)
     Underlined = { fg = c.red_bold },
     Ignore = { fg = c.fg_softest },
     Error = { fg = c.red },
-    Todo = { fg = c.blue_alt_bold, bold = true },
+    Todo = { fg = c.red_bolder, bold = true },
   }
 end
 
