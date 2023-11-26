@@ -98,7 +98,7 @@ local function treesitter(opts, c)
 
     ['@text.todo'] = { fg = c.white, bg = c.blue }, -- todo notes
     ['@text.note'] = { fg = c.white, bg = c.green_bold }, -- info notes
-    ['@text.warning'] = { fg = c.white, bg = c.gold_bolder }, -- warning notes
+    ['@text.warning'] = { fg = c.white, bg = c.gold_bold }, -- warning notes
     ['@text.danger'] = { fg = c.white, bg = c.red_bolder }, -- danger/error notes
 
     ['@text.diff.add'] = { link = 'DiffAdd' }, -- added text (for diff files)

@@ -31,12 +31,12 @@ local function syntax(opts, c)
     Structure = { fg = c.purple },
     Typedef = { fg = c.purple },
 
-    Special = { fg = c.red_bolder },
-    SpecialChar = { fg = c.red_bolder },
+    Special = { fg = c.red_bold },
+    SpecialChar = { fg = c.red_bold },
     Tag = { fg = c.red_bold },
     Delimiter = { fg = c.fg },
     SpecialComment = { fg = c.green_soft },
-    Debug = { fg = c.red_bolder },
+    Debug = { fg = c.red_bold },
 
     Underlined = { fg = c.red_bold },
     Ignore = { fg = c.fg_softest },
