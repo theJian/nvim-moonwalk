@@ -19,11 +19,11 @@ try(function()
   local function print_test_result(desc, is_failed, message)
     test_result.total = test_result.total + 1
     if is_failed then
-      print(string.format('[%s]%s \n', '✗', desc))
+      print(string.format('%s%s \n', '🟥', desc))
       print(string.format('   * %s', message))
       test_result.failed = test_result.failed + 1
     else
-      print(string.format('[%s]%s \n', '✓', desc))
+      print(string.format('%s%s \n', '🟩', desc))
     end
   end
 
