@@ -24,8 +24,8 @@ local C = {
   secondary_dark = '#c62d1f',
   secondary_light = '#c4837a',
   secondary_lightest = '#f9e0de',
-  gold_darkest = '#945400',
-  gold_dark = '#B76801',
+  gold_darkest = '#61330e',
+  gold_dark = '#965c12',
   gold = '#ff9d1e',
   gold_light = '#f9aa43',
   gold_lighter = '#ffc375',
@@ -95,7 +95,7 @@ M.default = {
   term_black = C.gray_warm_light,
   term_bright_black = C.gray,
 
-  term_red = C.secondary_dark,
+  term_red = C.secondary_darkest,
   term_bright_red = C.secondary,
 
   term_green = C.green_dark,

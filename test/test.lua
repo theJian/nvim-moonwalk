@@ -30,7 +30,7 @@ try(function()
   local function print_summary()
     print(
       string.format(
-        'Tests: %d failed, %d passed, %d total',
+        'Tests: %d failed, %d passed, %d total \n',
         test_result.failed,
         test_result.total - test_result.failed,
         test_result.total
