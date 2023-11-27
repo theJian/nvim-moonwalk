@@ -121,7 +121,38 @@ for i = 1, 7 do
 end
 
 -- Test content text
-local CONTENT_TEXT = {}
+local CONTENT_TEXT = {
+  'Constant',
+  'String',
+  'Character',
+  'Number',
+  'Boolean',
+  'Float',
+  'Identifier',
+  'Function',
+  'Statement',
+  'Conditional',
+  "Repeat",
+  "Label",
+  "Operator",
+  "Keyword",
+  "Exception",
+  "PreProc",
+  "Include",
+  "Define",
+  "Macro",
+  "PreCondit",
+  "Type",
+  "StorageClass",
+  "Structure",
+  "Typedef",
+  "Special",
+  "SpecialChar",
+  "Tag",
+  "Debug",
+  "Underlined",
+  "Error",
+}
 do
   local hl_groups = vim.api.nvim_get_hl(0, {})
   local exclude = {
