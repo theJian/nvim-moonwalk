@@ -1,8 +1,11 @@
 <h1 align="center"><i>MOONWALK</i></h1>
 
+<p align="center">
+<img src="https://github.com/theJian/nvim-moonwalk/actions/workflows/test.yml/badge.svg">
+</p>
 
 <p align="center">A light colorscheme for Neovim.</p>
-![test](https://github.com/theJian/nvim-moonwalk/actions/workflows/test.yml/badge.svg)
+
 
 __Screenshots__
 
