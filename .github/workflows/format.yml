@@ -25,6 +25,6 @@ jobs:
           args: --config-path=.stylua.toml lua/ test/
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: chore: formatting
+          commit_message: "chore: formatting"
           file_pattern: lua/ test/
 
