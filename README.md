@@ -2,6 +2,7 @@
 
 
 <p align="center">A light colorscheme for Neovim.</p>
+![test](https://github.com/theJian/nvim-moonwalk/actions/workflows/test.yml/badge.svg)
 
 __Screenshots__
 
