@@ -50,4 +50,4 @@ require'moonwalk'.setup({
 
 ## 🙌 Contributing
 
-We use APCA to compute contrast of highlight groups and test to make sure the readability. You PR needs to pass the test, you can run the test locally with `make test`.
+We use APCA to compute the contrast of highlight groups and test to ensure readability. Your PR needs to pass the test, you can run the test locally with `make test`.
