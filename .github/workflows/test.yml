@@ -1,10 +1,10 @@
-name: Test
+name: APCA Contrast Ratio Test
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
     pull_request:
-      branches: [ master ]
+      branches: [ main ]
 
 # Cancel any in-progress CI runs for a PR if it is updated
 concurrency:
