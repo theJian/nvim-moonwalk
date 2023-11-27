@@ -33,6 +33,7 @@
 -- should treat anything below this level as invisible, as it will not be
 -- visible for many users. This minimum level should be avoided for any items
 -- important to the use, understanding, or interaction of the site.
+
 local calc_apca = require('color').calc_apca
 local abs = math.abs
 
