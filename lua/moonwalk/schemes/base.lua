@@ -71,7 +71,7 @@ local function base(opts, c)
     },
     VertSplit = { link = 'WinSeparator' },
 
-    Folded = { fg = c.fg_soft, bg = c.none, italic = true },
+    Folded = { fg = c.fg_softest, bg = c.none, italic = true },
     FoldColumn = { fg = c.blue_bold, bg = c.none },
 
     NonText = { fg = c.fg_softest, bg = c.none },

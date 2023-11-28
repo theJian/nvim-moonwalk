@@ -1,4 +1,3 @@
-local palette = require 'moonwalk.palette'
 local util = require 'moonwalk.util'
 local config = require 'moonwalk.config'
 
