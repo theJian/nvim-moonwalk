@@ -51,6 +51,7 @@ local NON_TEXT = {
   'ColorColumn',
   'WinSeparator',
   'VertSplit',
+  'Folded',
 }
 
 vim.cmd.colorscheme 'moonwalk'
