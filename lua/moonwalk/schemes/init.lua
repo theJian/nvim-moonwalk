@@ -6,8 +6,8 @@ M.exports = {
   'treesitter',
   'lsp',
   'diagnostic',
-
   'misc',
+  'gitsigns',
 }
 
 return M

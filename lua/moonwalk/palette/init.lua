@@ -74,6 +74,7 @@ M.default = {
   gold = C.gold_darkest,
   gold_bg = C.gold_lightest,
   green_soft = C.green_light,
+  green_softer = C.green_lighter,
   green = C.green_dark,
   green_bold = C.green,
   green_bg = C.green_lightest,
@@ -84,7 +85,7 @@ M.default = {
   diff_delete = C.secondary_light,
   diff_change = C.green_lightest,
   diff_text = C.green_lighter,
-  diff_added = C.green,
+  diff_added = C.green_dark,
   diff_removed = C.secondary_darkest,
 
   search = C.gold_lighter,
