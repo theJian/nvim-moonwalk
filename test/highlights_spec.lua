@@ -52,6 +52,9 @@ local NON_TEXT = {
   'WinSeparator',
   'VertSplit',
   'Folded',
+  'IblScope',
+  'GitSignsChangeNr',
+  'GitSignsAddNr',
 }
 
 vim.cmd.colorscheme 'moonwalk'
