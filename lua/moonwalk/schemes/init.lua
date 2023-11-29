@@ -8,6 +8,7 @@ M.exports = {
   'diagnostic',
   'misc',
   'gitsigns',
+  'indent-blankline',
 }
 
 return M
