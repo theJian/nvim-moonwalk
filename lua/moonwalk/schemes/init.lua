@@ -9,6 +9,7 @@ M.exports = {
   'misc',
   'gitsigns',
   'indent-blankline',
+  'nvim-cmp',
 }
 
 return M

@@ -1,0 +1,37 @@
+local function nvim_cmp(opts, c)
+  return {
+    CmpItemAbbr = { fg = c.fg },
+    CmpItemAbbrDeprecated = { fg = c.red_bold, strikethrough = true },
+    CmpItemAbbrMatch = { fg = c.blue_bold, bold = true },
+    CmpItemAbbrMatchFuzzy = { fg = c.blue_bold, bold = true },
+    CmpItemKind = { fg = c.fg_softer },
+    CmpItemMenu = { fg = c.purple_bold, italic = true },
+    CmpItemKindClass = { link = "@type" },
+    CmpItemKindColor = { link = "@constant" },
+    CmpItemKindConstant = { link = "@constant" },
+    CmpItemKindConstructor = { link = "@constructor" },
+    CmpItemKindEnum = { link = "@type" },
+    CmpItemKindEnumMember = { link = "@field" },
+    CmpItemKindEvent = { link = "@type" },
+    CmpItemKindField = { link = "@field" },
+    CmpItemKindFile = { link = "@text.uri" },
+    CmpItemKindFolder = { link = "@constant" },
+    CmpItemKindFunction = { link = "@function" },
+    CmpItemKindInterface = { link = "@type" },
+    CmpItemKindKeyword = { link = "@keyword" },
+    CmpItemKindMethod = { link = "@method" },
+    CmpItemKindModule = { link = "@namespace" },
+    CmpItemKindOperator = { link = "@operator" },
+    CmpItemKindProperty = { link = "@property" },
+    CmpItemKindReference = { link = "@type" },
+    CmpItemKindSnippet = { link = "@constant" },
+    CmpItemKimdStruct = { link = "@type" },
+    CmpItemKindText = { link = "@text" },
+    CmpItemKindTypeParameter = { link = "@type" },
+    CmpItemKindUnit = { link = "@constant" },
+    CmpItemKindValue = { link = "@constant" },
+    CmpItemKindVariable = { link = "@variable" },
+  }
+end
+
+return nvim_cmp

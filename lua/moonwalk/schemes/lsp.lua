@@ -13,6 +13,8 @@ local function treesitter(opts, c)
 
     -- Semantic Highlights
     ['@lsp.typemod.class.declaration'] = { fg = c.purple_bold, bold = true },
+    ['@lsp.mod.deprecated'] = { strikethrough = true },
+
 
     LspInfoTitle = { fg = c.fg_bold, bg = c.gold_bolder, bold = true },
   }
