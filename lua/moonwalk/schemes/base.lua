@@ -57,7 +57,7 @@ local function base(opts, c)
     StatusCommand = { fg = c.green },
     StatusTerminal = { link = 'StatusInsert' },
 
-    Cursor = { fg = c.bg, bg = c.fg },
+    Cursor = { reverse = true },
     CursorIM = { link = 'Cursor' },
     lCursor = { link = 'Cursor' },
 
@@ -100,6 +100,10 @@ local function base(opts, c)
     PmenuSel = { fg = c.fg_bold, bg = c.bg_popup_line, bold = true, blend = 0 },
     PmenuSbar = { fg = c.none, bg = c.bg_popup },
     PmenuThumb = { fg = c.none, bg = c.red_bold, blend = 0 },
+    PmenuKind = { fg = c.fg_softer },
+    PmenuKindSel = { fg = c.fg_soft },
+    PmenuExtra = { fg = c.fg_softer },
+    PmenuExtraSel = { fg = c.fg_soft },
 
     WildMenu = { bg = c.bg_popup },
 
@@ -127,6 +131,9 @@ local function base(opts, c)
     QuickFixLine = { bg = c.current_line },
 
     MsgArea = { bg = c.current_line },
+
+    FloatShadow = { bg = c.bg2, blend = 80 },
+    FloatShadowThrough = { bg = c.bg2, blend = 100 },
   }
 end
 
