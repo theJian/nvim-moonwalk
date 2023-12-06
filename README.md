@@ -4,7 +4,7 @@
 <img src="https://github.com/theJian/nvim-moonwalk/actions/workflows/test.yml/badge.svg">
 </p>
 
-A highly accessible colorscheme for neovim and many other applications, with APCA-based accessibility testing to ensure a sufficient contrast ratio.
+A highly accessible colorscheme for neovim and many other applications, with APCA-based accessibility testing to ensure a sufficient contrast ratio. APCA stands for __Accessible Perceptual Contrast Algorithm__, a new color contrast method that provides a more accurate estimation of color contrast perception
 
 
 
