@@ -1,4 +1,4 @@
-local c = require('moonwalk.palette').default
+local c = require('moonwalk.palette').get_colors()
 
 return {
   normal = {
