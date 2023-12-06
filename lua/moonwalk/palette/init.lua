@@ -49,6 +49,7 @@ M.default = {
   bg2 = C.blue_lighter,
   bg_popup = C.blue_lightest,
   bg_popup_line = C.primary_alt_light,
+  bg_float = C.gray_lightest,
   fg = C.primary_darkest,
   fg_bold = C.base,
   fg_soft = C.gray_warm_dark,
@@ -88,9 +89,9 @@ M.default = {
   diff_added = C.green_dark,
   diff_removed = C.secondary_darkest,
 
-  search = C.gold_lighter,
+  search = C.gold_lightest,
   inc_search = C.gold_light,
-  visual = C.gold_lightest,
+  visual = C.gold_lighter,
   current_line = C.gray_lighter,
 
   term_black = C.gray_warm_light,

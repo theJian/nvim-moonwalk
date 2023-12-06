@@ -15,18 +15,18 @@ local function base(opts, c)
 
     FloatTitle = {
       fg = c.fg_bold,
-      bg = c.bg_popup,
+      bg = c.bg_float,
       blend = vim.o.winblend or 0,
       bold = true,
     },
     FloatBorder = {
-      fg = c.fg,
-      bg = c.bg_popup,
+      fg = c.bg2,
+      bg = c.bg_float,
       blend = vim.o.winblend or 0,
     },
     NormalFloat = {
       fg = c.fg,
-      bg = c.bg_popup,
+      bg = c.bg_float,
       blend = vim.o.winblend or 0,
     },
 
@@ -108,7 +108,7 @@ local function base(opts, c)
     WildMenu = { bg = c.bg_popup },
 
     Search = { bg = c.search },
-    IncSearch = { bg = c.inc_search, underline = true },
+    IncSearch = { bg = c.inc_search, bold = true },
     Substitute = { fg = c.white, bg = c.red_bold, bold = true },
     CurSearch = { link = 'IncSearch' },
     Visual = { bg = c.visual },
@@ -117,7 +117,7 @@ local function base(opts, c)
     CursorColumn = { bg = c.current_line },
     ColorColumn = { fg = c.bg2 },
     CursorLine = { bg = c.current_line },
-    CursorLineFold = { bg = c.current_line },
+    CursorLineFold = { link = 'FoldColumn' },
     CursorLineSign = { bg = c.current_line },
     MatchParen = { bg = c.blue_bolder, bold = true },
 
