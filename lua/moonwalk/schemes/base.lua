@@ -134,6 +134,9 @@ local function base(opts, c)
 
     FloatShadow = { bg = c.bg2, blend = 80 },
     FloatShadowThrough = { bg = c.bg2, blend = 100 },
+
+    MoreMsg = { fg = c.green, bold = true },
+    ModeMsg = { fg = c.fg, bold = true },
   }
 end
 
