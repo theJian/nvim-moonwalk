@@ -11,7 +11,7 @@ function M.get_palette()
 end
 
 function M.load_schemes(opts)
-  local colors = require'moonwalk.palette'.get_colors()
+  local colors = require('moonwalk.palette').get_colors()
   for _, name in ipairs(schemes.exports) do
     local module = 'moonwalk.schemes.' .. name
     if vim.env.MOONWALK_DEV then
@@ -45,7 +45,7 @@ function M.live_reloading()
 end
 
 function M.set_terminal_color()
-  local c = require'moonwalk.palette'.get_colors()
+  local c = require('moonwalk.palette').get_colors()
   vim.g.terminal_color_0 = c.term_black
   vim.g.terminal_color_8 = c.term_bright_black
 

@@ -1,7 +1,7 @@
 local bit = require 'bit'
 local bxor, lshift, rshift, band, tohex, bor = bit.bxor, bit.lshift, bit.rshift, bit.band, bit.tohex, bit.bor
 local floor = math.floor
-local light_palette = require'moonwalk.palette.light'.default
+local light_palette = require('moonwalk.palette.light').default
 
 local M = {}
 
@@ -11,7 +11,7 @@ local function invert(hex)
   r = bxor(0xff, r)
   g = bxor(0xff, g)
   b = bxor(0xff, b)
-  return '#'..tohex(bor(lshift(floor(r), 16), lshift(floor(g), 8), floor(b)), 6)
+  return '#' .. tohex(bor(lshift(floor(r), 16), lshift(floor(g), 8), floor(b)), 6)
 end
 
 M.default = {
