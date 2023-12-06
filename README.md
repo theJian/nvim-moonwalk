@@ -4,7 +4,8 @@
 <img src="https://github.com/theJian/nvim-moonwalk/actions/workflows/test.yml/badge.svg">
 </p>
 
-<p align="center">A highly accessible colorscheme for neovim and many other applications.</p>
+<p align="center">A highly accessible colorscheme for neovim and many other applications, with APCA-based accessibility testing to ensure a sufficient contrast ratio.</p>
+
 
 
 __Screenshots__
@@ -50,4 +51,4 @@ require'moonwalk'.setup({
 
 ## 🙌 Contributing
 
-We use APCA to compute the contrast of highlight groups and test to ensure readability. Your PR needs to pass the test, you can run the test locally with `make test`.
+We use APCA to compute the contrast of highlight groups and test to ensure readability. Your PR needs to pass the accessibility test, you can run the test locally with `make test`.
