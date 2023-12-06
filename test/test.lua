@@ -6,13 +6,10 @@ function try(f, catch_f)
 end
 
 try(function()
-  local uv = vim.loop
+  package.path = package.path .. ';./test/color.lua'
+
   local cwd = vim.api.nvim_call_function('getcwd', {})
   local testdir = cwd .. '/test'
-  local runtimepath = vim.api.nvim_get_option 'runtimepath'
-  vim.api.nvim_set_option('runtimepath', table.concat({ cwd, runtimepath }, ','))
-  package.path = package.path .. string.format(';%s/?.lua', testdir)
-
   local test_modules = vim.fn.glob(testdir .. '/*_spec.lua', 0, 1)
   local test_result = { total = 0, failed = 0 }
 
@@ -51,7 +48,7 @@ try(function()
           toBe = function(b)
             if a ~= b then
               is_failed = true
-              message = string.format('Expected %s but received %s', a, b)
+              message = string.format('Expected %s but received %s', b, a)
             end
           end,
 

@@ -1,3 +1,3 @@
 .PHONY: test
 test:
-	nvim --clean --headless -l test/test.lua
+	nvim --clean --headless --cmd 'set rtp+=$(CURDIR)' -l test/test.lua

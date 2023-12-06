@@ -21,7 +21,7 @@ function diagnostic(opts, c)
     DiagnosticFloatingHint = { link = 'DiagnosticHint' },
     DiagnosticFloatingOk = { link = 'DiagnosticOk' },
     DiagnosticDeprecated = { fg = c.fg_soft, strikethrough = true },
-    DiagnosticUnnecessary = { fg = c.fg_soft },
+    DiagnosticUnnecessary = { fg = c.fg_softer },
   }
 end
 
