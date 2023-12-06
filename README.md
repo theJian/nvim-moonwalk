@@ -4,7 +4,7 @@
 <img src="https://github.com/theJian/nvim-moonwalk/actions/workflows/test.yml/badge.svg">
 </p>
 
-<p align="center">A highly accessible colorscheme for neovim and many other applications, with APCA-based accessibility testing to ensure a sufficient contrast ratio.</p>
+A highly accessible colorscheme for neovim and many other applications, with APCA-based accessibility testing to ensure a sufficient contrast ratio.
 
 
 
