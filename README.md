@@ -52,6 +52,14 @@ __Screenshots__
 - Extra configurations for other applications
 
 
+## 📦 Installation
+Install it with your favorite package manager and add this to your configuration.
+```lua
+vim.o.background = 'light'
+vim.cmd.colorscheme'moonwalk'
+```
+
+
 ## 🛠 Options
 ```lua
 require'moonwalk'.setup({
