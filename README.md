@@ -11,25 +11,36 @@ A highly accessible colorscheme for neovim and many other applications, with APC
 __Screenshots__
 
 <details>
+  <summary>go</summary>
+  <img width="800" src="https://github.com/theJian/nvim-moonwalk/assets/9625224/1ad054a9-4976-462d-824b-e9d2389ab7f0">
+</details>
+
+
+<details>
+  <summary>lua</summary>
+  <img width="800" src="https://github.com/theJian/nvim-moonwalk/assets/9625224/641cadba-cd80-4b6b-8bda-0272753e3558">
+</details>
+
+<details>
   <summary>javascript</summary>
-  <img width="912" alt="Screen Shot 2023-11-14 at 13 06 03" src="https://github.com/theJian/nvim-moonwalk/assets/9625224/686964c0-de31-4906-9473-b30cffc1fa81">
+  <img width="800" src="https://github.com/theJian/nvim-moonwalk/assets/9625224/af5735bd-17c4-4b40-9c34-d9c37af2bb1e">
+
 </details>
 
 <details>
   <summary>python</summary>
-  <img width="912" alt="Screen Shot 2023-11-14 at 14 19 31" src="https://github.com/theJian/nvim-moonwalk/assets/9625224/d733feb1-c141-42f8-9202-51ca7d641cb3">
+  <img width="800" src="https://github.com/theJian/nvim-moonwalk/assets/9625224/6eb7e3f3-86f0-4d59-be6a-9fa2c0f987f2">
 </details>
 
 <details>
   <summary>html</summary>
-  <img width="912" alt="Screen Shot 2023-11-14 at 14 20 47" src="https://github.com/theJian/nvim-moonwalk/assets/9625224/0f215f60-9c61-4db0-92ed-fb1e96493f37">
+  <img width="800" src="https://github.com/theJian/nvim-moonwalk/assets/9625224/51af890e-a66c-4263-9e23-69917a7d2d88">
 </details>
 
 <details>
   <summary>terminal colors</summary>
-  <img width="742" alt="Screen Shot 2023-11-10 at 15 26 45" src="https://github.com/theJian/nvim-moonwalk/assets/9625224/e822691c-ac87-418e-8666-529410ba73c2">
+  <img width="602" alt="Screen Shot 2023-12-07 at 14 13 16" src="https://github.com/theJian/nvim-moonwalk/assets/9625224/31fdd549-904c-4bc4-bdc6-3d605a5c4a0b">
 </details>
-
 
 
 
