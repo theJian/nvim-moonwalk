@@ -111,7 +111,7 @@ local function treesitter(opts, c)
 
     -- conceal
     ['@conceal'] = { link = 'Conceal' }, -- for captures that are only used for concealing
-    ['@conceal.json'] = { fg = c.fg }, -- for captures that are only used for concealing
+    ['@conceal.json'] = { fg = c.fg_softer }, -- for captures that are only used for concealing
   }
 end
 
