@@ -81,7 +81,7 @@ local function treesitter(opts, c)
     ['@symbol'] = { fg = c.gold }, -- symbols or atoms
 
     -- text
-    ['@text'] = { link = 'Normal' }, -- non-structured text
+    ['@text'] = { fg = c.fg }, -- non-structured text
     ['@text.strong'] = { fg = c.fg, bold = true }, -- bold text
     ['@text.emphasis'] = { fg = c.blue }, -- text with emphasis
     ['@text.underline'] = { link = 'Underlined' }, -- underlined text

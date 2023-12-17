@@ -94,10 +94,10 @@ local function base(opts, c)
 
     ErrorMsg = { fg = c.red, bg = c.red_bg },
     WarningMsg = { fg = c.fg_bold, bg = c.gold_bg },
-    Question = { fg = c.fg_bold, bg = c.blue_bg },
+    Question = { fg = c.fg_bold },
 
     Pmenu = { fg = c.none, bg = c.bg_popup },
-    PmenuSel = { fg = c.fg_bold, bg = c.bg_popup_line, bold = true, blend = 0 },
+    PmenuSel = { fg = c.none, bg = c.bg_popup_line, bold = true, blend = 0 },
     PmenuSbar = { fg = c.none, bg = c.bg_popup },
     PmenuThumb = { fg = c.none, bg = c.red_bold, blend = 0 },
     PmenuKind = { fg = c.fg_softer },
