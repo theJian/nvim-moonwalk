@@ -53,7 +53,9 @@ local NON_TEXT = {
   'VertSplit',
   'Folded',
   'IblScope',
+  'GitSignsChange',
   'GitSignsChangeNr',
+  'GitSignsAdd',
   'GitSignsAddNr',
 }
 
@@ -166,6 +168,7 @@ do
     '@comment.documentation',
     '@lsp.type.comment',
     '@conceal',
+    '@conceal.json',
     '@punctuation.special',
     '@string.documentation',
     '@error',

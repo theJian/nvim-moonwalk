@@ -2,8 +2,8 @@ function diagnostic(opts, c)
   return {
     DiagnosticError = { fg = c.red_bold },
     DiagnosticWarn = { fg = c.gold_bold },
-    DiagnosticInfo = { fg = c.fg_soft },
-    DiagnosticHint = { fg = c.primary },
+    DiagnosticInfo = { fg = c.primary_bold },
+    DiagnosticHint = { fg = c.fg_soft },
     DiagnosticOk = { fg = c.green_bold },
     DiagnosticUnderlineError = { sp = c.red_bolder, underline = true },
     DiagnosticUnderlineWarn = { sp = c.gold_bolder, underline = true },
