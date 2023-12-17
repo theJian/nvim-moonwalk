@@ -1,9 +1,9 @@
 local function treesitter(opts, c)
   return {
     -- Reference Highlights
-    LspReferenceText = { bg = c.blue_bg, underline = true },
-    LspReferenceRead = { bg = c.blue_bg, underline = true },
-    LspReferenceWrite = { bg = c.blue_bg, underline = true },
+    LspReferenceText = { bg = c.alt_bg, underline = true },
+    LspReferenceRead = { bg = c.alt_bg, underline = true },
+    LspReferenceWrite = { bg = c.alt_bg, underline = true },
 
     -- Codelens
     LspCodeLens = { fg = c.red_soft, italic = true },

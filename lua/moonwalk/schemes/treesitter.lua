@@ -32,12 +32,12 @@ local function treesitter(opts, c)
 
     -- functions
     ['@function'] = { link = 'Function' }, -- function definitions
-    ['@function.builtin'] = { fg = c.blue_alt, italic = true }, -- built-in functions
-    ['@function.call'] = { fg = c.blue_alt }, -- function calls
+    ['@function.builtin'] = { fg = c.alt, italic = true }, -- built-in functions
+    ['@function.call'] = { fg = c.alt }, -- function calls
     ['@function.macro'] = { link = 'Macro' }, -- preprocessor macros
 
     ['@method'] = { link = 'Function' }, -- method definitions
-    ['@method.call'] = { fg = c.blue_alt }, -- method calls
+    ['@method.call'] = { fg = c.alt }, -- method calls
 
     ['@constructor'] = { fg = c.purple_bold }, -- constructor calls and definitions
     ['@parameter'] = { link = 'Identifier' }, -- parameters of a function
@@ -61,7 +61,7 @@ local function treesitter(opts, c)
     -- types
     ['@type'] = { link = 'Type' }, -- type or class definitions and annotations
     ['@type.builtin'] = { fg = c.purple, italic = true }, -- built-in types
-    ['@type.definition'] = { fg = c.blue }, -- identifiers in type definitions (e.g. `typedef <type> <identifier>` in C)
+    ['@type.definition'] = { fg = c.primary }, -- identifiers in type definitions (e.g. `typedef <type> <identifier>` in C)
     ['@type.qualifier'] = { fg = c.fg, italic = true }, -- type qualifiers (e.g. `const`)
 
     ['@storageclass'] = { link = 'StorageClass' }, -- modifiers that affect storage in memory or life-time
@@ -83,20 +83,20 @@ local function treesitter(opts, c)
     -- text
     ['@text'] = { fg = c.fg }, -- non-structured text
     ['@text.strong'] = { fg = c.fg, bold = true }, -- bold text
-    ['@text.emphasis'] = { fg = c.blue }, -- text with emphasis
+    ['@text.emphasis'] = { fg = c.primary }, -- text with emphasis
     ['@text.underline'] = { link = 'Underlined' }, -- underlined text
     ['@text.strike'] = { fg = c.fg_softer, strikethrough = true }, -- strikethrough text
     ['@text.title'] = { fg = c.fg_bold, bold = true }, -- text that is part of a title
     ['@text.quote'] = { fg = c.fg_soft, italic = true }, -- text quotations
     ['@text.uri'] = { link = 'Tag' }, -- URIs (e.g. hyperlinks)
-    ['@text.math'] = { fg = c.blue_bold }, -- math environments (e.g. `$ ... $` in LaTeX)
+    ['@text.math'] = { fg = c.primary_bold }, -- math environments (e.g. `$ ... $` in LaTeX)
     ['@text.environment'] = { fg = c.green }, -- text environments of markup languages
     ['@text.environment.name'] = { fg = c.green_bold }, -- text indicating the type of an environment
-    ['@text.reference'] = { fg = c.blue_cool }, -- text references, footnotes, citations, etc.
+    ['@text.reference'] = { fg = c.blue }, -- text references, footnotes, citations, etc.
 
     ['@text.literal'] = { fg = c.fg_bold }, -- literal or verbatim text (e.g., inline code)
 
-    ['@text.todo'] = { fg = c.white, bg = c.blue }, -- todo notes
+    ['@text.todo'] = { fg = c.white, bg = c.primary }, -- todo notes
     ['@text.note'] = { fg = c.white, bg = c.green_bold }, -- info notes
     ['@text.warning'] = { fg = c.white, bg = c.gold_bold }, -- warning notes
     ['@text.danger'] = { fg = c.white, bg = c.red_bolder }, -- danger/error notes
@@ -106,7 +106,7 @@ local function treesitter(opts, c)
 
     -- tags
     ['@tag'] = { fg = c.purple, bold = true }, -- XML tag names
-    ['@tag.attribute'] = { fg = c.blue }, -- XML tag attributes
+    ['@tag.attribute'] = { fg = c.primary }, -- XML tag attributes
     ['@tag.delimiter'] = { fg = c.fg }, -- XML tag delimiters
 
     -- conceal

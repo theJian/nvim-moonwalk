@@ -2,8 +2,8 @@ local function nvim_cmp(opts, c)
   return {
     CmpItemAbbr = { fg = c.fg },
     CmpItemAbbrDeprecated = { fg = c.red_bold, strikethrough = true },
-    CmpItemAbbrMatch = { fg = c.blue_bold, bold = true },
-    CmpItemAbbrMatchFuzzy = { fg = c.blue_bold, bold = true },
+    CmpItemAbbrMatch = { fg = c.primary_bold, bold = true },
+    CmpItemAbbrMatchFuzzy = { fg = c.primary_bold, bold = true },
     CmpItemKind = { fg = c.fg_softer },
     CmpItemMenu = { fg = c.purple_bold, italic = true },
     CmpItemKindClass = { link = '@type' },

@@ -37,10 +37,10 @@ local function base(opts, c)
     SpecialKey = { fg = c.fg_soft },
 
     TabLine = { bg = c.bg, fg = c.bg2, underline = true },
-    TabLineSel = { fg = c.blue_cool, bg = c.none, bold = true, underline = true },
+    TabLineSel = { fg = c.blue, bg = c.none, bold = true, underline = true },
     TabLineFill = { fg = c.bg2, bg = c.bg, underline = true },
 
-    WinBar = { fg = c.blue_cool, underdashed = true },
+    WinBar = { fg = c.blue, underdashed = true },
     WinBarNC = {
       fg = c.bg2,
       bg = c.none,
@@ -51,7 +51,7 @@ local function base(opts, c)
     StatusLineNC = { fg = c.bg2, bg = c.none },
     StatusInactive = { fg = c.fg_soft },
     StatusNormal = { fg = c.fg },
-    StatusInsert = { fg = c.blue_bold },
+    StatusInsert = { fg = c.primary_bold },
     StatusVisual = { fg = c.gold },
     StatusReplace = { fg = c.red },
     StatusCommand = { fg = c.green },
@@ -72,7 +72,7 @@ local function base(opts, c)
     VertSplit = { link = 'WinSeparator' },
 
     Folded = { fg = c.fg_softest, bg = c.none, italic = true },
-    FoldColumn = { fg = c.blue_bold, bg = c.none },
+    FoldColumn = { fg = c.primary_bold, bg = c.none },
 
     NonText = { fg = c.fg_softest, bg = c.none },
     EndOfBuffer = { link = 'NonText' },
@@ -92,7 +92,7 @@ local function base(opts, c)
     DiffLine = { fg = c.purple },
     DiffIndexLine = { fg = c.purple },
 
-    ErrorMsg = { fg = c.red, bg = c.red_bg },
+    ErrorMsg = { fg = c.red_bold },
     WarningMsg = { fg = c.fg_bold, bg = c.gold_bg },
     Question = { fg = c.fg_bold },
 
@@ -119,7 +119,7 @@ local function base(opts, c)
     CursorLine = { bg = c.current_line },
     CursorLineFold = { link = 'FoldColumn' },
     CursorLineSign = { bg = c.current_line },
-    MatchParen = { bg = c.blue_bolder, bold = true },
+    MatchParen = { bg = c.alt_bolder, bold = true },
 
     SpellBad = { undercurl = true },
     SpellCap = { undercurl = true },
@@ -127,7 +127,7 @@ local function base(opts, c)
     SpellRare = { undercurl = true },
 
     Terminal = { fg = c.fg_bold, bg = c.bg },
-    Directory = { fg = c.blue, bg = c.none },
+    Directory = { fg = c.primary, bg = c.none },
     QuickFixLine = { bg = c.current_line },
 
     MsgArea = { bg = c.current_line },

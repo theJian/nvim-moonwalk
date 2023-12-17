@@ -1,6 +1,6 @@
 local function indent_blankline(opts, c)
   return {
-    IblScope = { fg = c.blue_bolder },
+    IblScope = { fg = c.alt_bolder },
   }
 end
 
