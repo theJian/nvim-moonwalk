@@ -132,8 +132,8 @@ local function base(opts, c)
 
     MsgArea = { bg = c.current_line },
 
-    FloatShadow = { bg = c.bg2, blend = 80 },
-    FloatShadowThrough = { bg = c.bg2, blend = 100 },
+    FloatShadow = { bg = c.bg2 },
+    FloatShadowThrough = { bg = c.none, blend = 100 },
 
     MoreMsg = { fg = c.green, bold = true },
     ModeMsg = { fg = c.fg, bold = true },
