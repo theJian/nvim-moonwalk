@@ -88,12 +88,10 @@ M.default = {
   purple_bold = C.purple_bold,
   purple = C.purple,
 
-  diff_add = C.green_softer,
-  diff_delete = C.red_soft,
+  diff_add = C.green_bg,
+  diff_delete = C.red_bg,
   diff_change = C.green_bg,
   diff_text = C.green_softer,
-  diff_added = C.green,
-  diff_removed = C.red,
 
   search = C.gold_bg,
   inc_search = C.gold_soft,
