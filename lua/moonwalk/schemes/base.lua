@@ -61,7 +61,7 @@ local function base(opts, c)
     CursorIM = { link = 'Cursor' },
     lCursor = { link = 'Cursor' },
 
-    CursorLineNr = { fg = c.fg_bold, bg = c.current_line },
+    CursorLineNr = { fg = c.fg_bold },
     LineNr = { link = 'NonText' },
 
     WinSeparator = {
@@ -118,7 +118,7 @@ local function base(opts, c)
     ColorColumn = { fg = c.bg2 },
     CursorLine = { bg = c.current_line },
     CursorLineFold = { link = 'FoldColumn' },
-    CursorLineSign = { bg = c.current_line },
+    CursorLineSign = { bg = c.none },
     MatchParen = { bg = c.alt_bolder, bold = true },
 
     SpellBad = { undercurl = true },
@@ -130,7 +130,7 @@ local function base(opts, c)
     Directory = { fg = c.primary, bg = c.none },
     QuickFixLine = { bg = c.current_line },
 
-    MsgArea = { bg = c.current_line },
+    MsgArea = { bg = c.none },
 
     FloatShadow = { bg = c.bg2 },
     FloatShadowThrough = { bg = c.none, blend = 100 },

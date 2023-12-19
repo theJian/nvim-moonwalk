@@ -9,7 +9,7 @@ function gitsigns(opts, c)
     GitSignsChange = { fg = c.gold_bolder },
     GitSignsChangeInline = { link = 'DiffText' },
     GitSignsChangeLn = { bg = c.gold_bg },
-    GitSignsChangeNr = { fg = c.gold_softer },
+    GitSignsChangeNr = { fg = c.gold_soft },
     GitSignsChangeVirtLnInline = { link = 'DiffText' },
     GitSignsDelete = { fg = c.red_bolder },
     GitSignsDeleteInline = { bg = c.red_soft },
