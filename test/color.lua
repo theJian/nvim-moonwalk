@@ -5,11 +5,6 @@ local M = {}
 
 local SA98G = {
   mainTRC = 2.4, -- 2.4 exponent for emulating actual monitor perception
-  -- sRGB coefficients
-  sRco = 0.2126729,
-  sGco = 0.7151522,
-  sBco = 0.0721750,
-
   -- G-4g constants for use with 2.4 exponent
   normBG = 0.56,
   normTXT = 0.57,
@@ -25,6 +20,21 @@ local SA98G = {
   loWoBoffset = 0.027,
   deltaYmin = 0.0005,
   loClip = 0.1,
+}
+
+-- sRGB coefficients
+local RGBCO = {
+  sRcoX = 0.4124564,
+  sGcoX = 0.3575761,
+  sBcoX = 0.1804375,
+
+  sRcoY = 0.2126729,
+  sGcoY = 0.7151522,
+  sBcoY = 0.0721750,
+
+  sRcoZ = 0.0193339,
+  sGcoZ = 0.1191920,
+  sBcoZ = 0.9503041,
 }
 
 function M.rgb(num)
@@ -48,7 +58,7 @@ function M.sRGB2y(rgb)
   local function simple_exp(chan)
     return math.pow(chan / 255.0, SA98G.mainTRC)
   end
-  return SA98G.sRco * simple_exp(rgb[1]) + SA98G.sGco * simple_exp(rgb[2]) + SA98G.sBco * simple_exp(rgb[3])
+  return RGBCO.sRcoY * simple_exp(rgb[1]) + RGBCO.sGcoY * simple_exp(rgb[2]) + RGBCO.sBcoY * simple_exp(rgb[3])
 end
 
 -- @ref: https://github.com/Myndex/apca-w3/blob/master/src/apca-w3.js
@@ -95,6 +105,23 @@ function M.calc_apca(text_color, bg_color)
   local bg_clr = M.color2rgb(bg_color)
   local tx_clr = M.color2rgb(text_color)
   return M.apca_contrast(M.sRGB2y(tx_clr), M.sRGB2y(bg_clr))
+end
+
+function M.sRGB2XYZ(rgb)
+  for i = 1,3 do
+    local c = rgb[i] / 255.0
+    if c > 0.04045 then
+      rgb[i] = math.pow((c + 0.055) / 1.055, SA98G.mainTRC)
+    else
+      rgb[i] = c / 12.92
+    end
+    rgb[i] = rgb[i] * 100
+  end
+
+  local x = RGBCO.sRcoX * rgb[1] + RGBCO.sGcoX * rgb[2] + RGBCO.sBcoX * rgb[3]
+  local y = RGBCO.sRcoY * rgb[1] + RGBCO.sGcoY * rgb[2] + RGBCO.sBcoY * rgb[3]
+  local z = RGBCO.sRcoZ * rgb[1] + RGBCO.sGcoZ * rgb[2] + RGBCO.sBcoZ * rgb[3]
+  return { x, y, z }
 end
 
 return M
