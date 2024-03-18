@@ -108,7 +108,7 @@ function M.calc_apca(text_color, bg_color)
 end
 
 function M.sRGB2XYZ(rgb)
-  for i = 1,3 do
+  for i = 1, 3 do
     local c = rgb[i] / 255.0
     if c > 0.04045 then
       rgb[i] = math.pow((c + 0.055) / 1.055, SA98G.mainTRC)
