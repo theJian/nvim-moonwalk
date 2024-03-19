@@ -1,6 +1,6 @@
 -- @ref: https://github.com/Myndex/apca-w3/blob/master/test/index.js
 
-local calc_apca = require('color').calc_apca
+local calc_apca = require('apca').calc_apca
 
 local color = { '#888888', '#FFFFFF', '#000000', '#aaaaaa', '#112233', '#ddeeff', '#112233', '#444444' }
 

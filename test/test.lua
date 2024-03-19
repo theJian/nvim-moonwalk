@@ -6,7 +6,7 @@ function try(f, catch_f)
 end
 
 try(function()
-  package.path = package.path .. ';./test/color.lua'
+  package.path = package.path .. ';./test/?.lua'
 
   local cwd = vim.api.nvim_call_function('getcwd', {})
   local testdir = cwd .. '/test'

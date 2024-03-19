@@ -34,7 +34,7 @@
 -- visible for many users. This minimum level should be avoided for any items
 -- important to the use, understanding, or interaction of the site.
 
-local calc_apca = require('color').calc_apca
+local calc_apca = require('apca').calc_apca
 local abs = math.abs
 
 local IGNORE = {
