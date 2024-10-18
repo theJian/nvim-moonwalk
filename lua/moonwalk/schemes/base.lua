@@ -81,7 +81,7 @@ local function base(opts, c)
 
     DiffAdd = { bg = c.diff_add },
     DiffChange = { bg = c.diff_change },
-    DiffDelete = { bg = c.diff_delete },
+    DiffDelete = { fg = c.red_soft, bg = c.diff_delete },
     DiffText = { bg = c.diff_text },
     DiffAdded = { fg = c.green, bg = c.diff_add },
     DiffRemoved = { fg = c.red, bg = c.diff_delete },
