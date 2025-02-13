@@ -1,5 +1,4 @@
-local bit = require 'bit'
-local band, rshift = bit.band, bit.rshift
+local color2rgb = require('util').color2rgb
 
 local M = {}
 
@@ -27,22 +26,6 @@ local SA98G = {
   loClip = 0.1,
 }
 
-function M.rgb(num)
-  local r, g, b = rshift(num, 16), band(rshift(num, 8), 0x00ff), band(num, 0x0000ff)
-  return { r, g, b }
-end
-
-function M.hex2rgb(hex)
-  local num = tonumber(hex:sub(2), 16)
-  return M.rgb(num)
-end
-
-function M.color2rgb(color)
-  if type(color) == 'string' and color:sub(1, 1) == '#' then
-    return M.hex2rgb(color)
-  end
-  return M.rgb(color)
-end
 
 function M.sRGB2y(rgb)
   local function simple_exp(chan)
@@ -92,8 +75,8 @@ function M.apca_contrast(txt_y, bg_y)
 end
 
 function M.calc_apca(text_color, bg_color)
-  local bg_clr = M.color2rgb(bg_color)
-  local tx_clr = M.color2rgb(text_color)
+  local bg_clr = color2rgb(bg_color)
+  local tx_clr = color2rgb(text_color)
   return M.apca_contrast(M.sRGB2y(tx_clr), M.sRGB2y(bg_clr))
 end
 
