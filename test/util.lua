@@ -21,20 +21,19 @@ function M.color2rgb(color)
 end
 
 function M.clamp(value, min, max)
-    return math.max(min, math.min(max, value))
+  return math.max(min, math.min(max, value))
 end
 
 function M.degrees(radians)
-    return radians * (180 / math.pi)
+  return radians * (180 / math.pi)
 end
 
 function M.radians(degrees)
-    return degrees * (math.pi / 180)
+  return degrees * (math.pi / 180)
 end
 
 function M.mean(a, b)
-    return (a + b) / 2
+  return (a + b) / 2
 end
-
 
 return M

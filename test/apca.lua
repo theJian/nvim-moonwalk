@@ -26,7 +26,6 @@ local SA98G = {
   loClip = 0.1,
 }
 
-
 function M.sRGB2y(rgb)
   local function simple_exp(chan)
     return math.pow(chan / 255.0, SA98G.mainTRC)
