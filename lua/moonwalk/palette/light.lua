@@ -62,7 +62,6 @@ M.default = {
     float = C.gray_lightest,
   },
 
-
   white = C.white,
   gray = C.gray,
   gray_dark = C.gray_dark,
