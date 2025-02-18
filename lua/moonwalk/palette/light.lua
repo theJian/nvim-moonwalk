@@ -45,16 +45,23 @@ local C = {
 
 M.default = {
   none = 'NONE',
-  bg = C.bg,
-  bg2 = C.bg2,
-  bg_popup = C.gray_lightest,
-  bg_popup_line = C.blue_bg,
-  bg_float = C.gray_lightest,
-  fg = C.fg,
-  fg_bold = C.fg_bold,
-  fg_soft = C.fg_soft,
-  fg_softer = C.fg_softer,
-  fg_softest = C.gray_light,
+
+  fg = {
+    normal = C.fg,
+    bold = C.fg_bold,
+    soft = C.fg_soft,
+    softer = C.fg_softer,
+    softest = C.gray_light,
+  },
+
+  bg = {
+    normal = C.bg,
+    normal2 = C.bg2,
+    popup = C.gray_lightest,
+    popup_line = C.blue_bg,
+    float = C.gray_lightest,
+  },
+
 
   white = C.white,
   gray = C.gray,

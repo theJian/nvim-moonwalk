@@ -13,7 +13,7 @@ local function treesitter(opts, c)
 
     -- punctuation
     ['@punctuation.delimiter'] = { link = 'Delimiter' }, -- delimiters (e.g. `;` / `.` / `,`)
-    ['@punctuation.bracket'] = { fg = c.fg }, -- brackets (e.g. `()` / `{}` / `[]`)
+    ['@punctuation.bracket'] = { fg = c.fg.normal }, -- brackets (e.g. `()` / `{}` / `[]`)
     ['@punctuation.special'] = { link = 'SpecialChar' }, -- special symbols (e.g. `{}` in string interpolation)
 
     -- literals
@@ -45,8 +45,8 @@ local function treesitter(opts, c)
     -- keywords
     ['@keyword'] = { link = 'Keyword' }, -- various keywords
     ['@keyword.coroutine'] = { fg = c.green_bold, italic = true }, -- keywords related to coroutines (e.g. `go` in Go, `async/await` in Python)
-    ['@keyword.function'] = { fg = c.fg_bold, bold = true }, -- keywords that define a function (e.g. `func` in Go, `def` in Python)
-    ['@keyword.operator'] = { fg = c.fg_bold, italic = true }, -- operators that are English words (e.g. `and` / `or`)
+    ['@keyword.function'] = { fg = c.fg.bold, bold = true }, -- keywords that define a function (e.g. `func` in Go, `def` in Python)
+    ['@keyword.operator'] = { fg = c.fg.bold, italic = true }, -- operators that are English words (e.g. `and` / `or`)
     ['@keyword.return'] = { fg = c.gold_bold, bold = true }, -- keywords like `return` and `yield`
 
     ['@conditional'] = { link = 'Conditional' }, -- keywords related to conditionals (e.g. `if` / `else`)
@@ -62,16 +62,16 @@ local function treesitter(opts, c)
     ['@type'] = { link = 'Type' }, -- type or class definitions and annotations
     ['@type.builtin'] = { fg = c.purple, italic = true }, -- built-in types
     ['@type.definition'] = { fg = c.primary }, -- identifiers in type definitions (e.g. `typedef <type> <identifier>` in C)
-    ['@type.qualifier'] = { fg = c.fg, italic = true }, -- type qualifiers (e.g. `const`)
+    ['@type.qualifier'] = { fg = c.fg.normal, italic = true }, -- type qualifiers (e.g. `const`)
 
     ['@storageclass'] = { link = 'StorageClass' }, -- modifiers that affect storage in memory or life-time
     ['@attribute'] = { fg = c.gold }, -- attribute annotations (e.g. Python decorators)
-    ['@field'] = { fg = c.fg }, -- object and struct fields
-    ['@property'] = { fg = c.fg }, -- similar to `@field`
+    ['@field'] = { fg = c.fg.normal }, -- object and struct fields
+    ['@property'] = { fg = c.fg.normal }, -- similar to `@field`
 
     -- identifiers
     ['@variable'] = { link = 'Identifier' }, -- various variable names
-    ['@variable.builtin'] = { fg = c.fg, italic = true }, -- built-in variable names (e.g. `this`)
+    ['@variable.builtin'] = { fg = c.fg.normal, italic = true }, -- built-in variable names (e.g. `this`)
 
     ['@constant'] = { link = 'Constant' }, -- constant identifiers
     ['@constant.builtin'] = { fg = c.purple, italic = true }, -- built-in constant values
@@ -81,20 +81,20 @@ local function treesitter(opts, c)
     ['@symbol'] = { fg = c.gold }, -- symbols or atoms
 
     -- text
-    ['@text'] = { fg = c.fg }, -- non-structured text
-    ['@text.strong'] = { fg = c.fg, bold = true }, -- bold text
+    ['@text'] = { fg = c.fg.normal }, -- non-structured text
+    ['@text.strong'] = { fg = c.fg.normal, bold = true }, -- bold text
     ['@text.emphasis'] = { fg = c.primary }, -- text with emphasis
     ['@text.underline'] = { link = 'Underlined' }, -- underlined text
-    ['@text.strike'] = { fg = c.fg_softer, strikethrough = true }, -- strikethrough text
-    ['@text.title'] = { fg = c.fg_bold, bold = true }, -- text that is part of a title
-    ['@text.quote'] = { fg = c.fg_soft, italic = true }, -- text quotations
+    ['@text.strike'] = { fg = c.fg.softer, strikethrough = true }, -- strikethrough text
+    ['@text.title'] = { fg = c.fg.bold, bold = true }, -- text that is part of a title
+    ['@text.quote'] = { fg = c.fg.soft, italic = true }, -- text quotations
     ['@text.uri'] = { link = 'Tag' }, -- URIs (e.g. hyperlinks)
     ['@text.math'] = { fg = c.primary_bold }, -- math environments (e.g. `$ ... $` in LaTeX)
     ['@text.environment'] = { fg = c.green }, -- text environments of markup languages
     ['@text.environment.name'] = { fg = c.green_bold }, -- text indicating the type of an environment
     ['@text.reference'] = { fg = c.blue }, -- text references, footnotes, citations, etc.
 
-    ['@text.literal'] = { fg = c.fg_bold }, -- literal or verbatim text (e.g., inline code)
+    ['@text.literal'] = { fg = c.fg.bold }, -- literal or verbatim text (e.g., inline code)
 
     ['@text.todo'] = { fg = c.white, bg = c.primary }, -- todo notes
     ['@text.note'] = { fg = c.white, bg = c.green_bold }, -- info notes
@@ -107,11 +107,11 @@ local function treesitter(opts, c)
     -- tags
     ['@tag'] = { fg = c.purple, bold = true }, -- XML tag names
     ['@tag.attribute'] = { fg = c.primary }, -- XML tag attributes
-    ['@tag.delimiter'] = { fg = c.fg }, -- XML tag delimiters
+    ['@tag.delimiter'] = { fg = c.fg.normal }, -- XML tag delimiters
 
     -- conceal
     ['@conceal'] = { link = 'Conceal' }, -- for captures that are only used for concealing
-    ['@conceal.json'] = { fg = c.fg_softer }, -- for captures that are only used for concealing
+    ['@conceal.json'] = { fg = c.fg.softer }, -- for captures that are only used for concealing
   }
 end
 

@@ -1,6 +1,6 @@
 local function syntax(opts, c)
   return {
-    Comment = { fg = c.fg_softer, italic = true },
+    Comment = { fg = c.fg.softer, italic = true },
 
     Constant = { fg = c.red },
     String = { fg = c.green },
@@ -12,12 +12,12 @@ local function syntax(opts, c)
     Identifier = { fg = c.primary },
     Function = { fg = c.primary_bold },
 
-    Statement = { fg = c.fg },
+    Statement = { fg = c.fg.normal },
     Conditional = { fg = c.red_bold },
     Repeat = { fg = c.blue },
     Label = { fg = c.blue_bold },
-    Operator = { fg = c.fg },
-    Keyword = { fg = c.fg },
+    Operator = { fg = c.fg.normal },
+    Keyword = { fg = c.fg.normal },
     Exception = { fg = c.gold },
 
     PreProc = { fg = c.alt, italic = true },
@@ -34,12 +34,12 @@ local function syntax(opts, c)
     Special = { fg = c.red_bold },
     SpecialChar = { fg = c.red_bold },
     Tag = { fg = c.red_bold },
-    Delimiter = { fg = c.fg },
-    SpecialComment = { fg = c.fg_softer },
+    Delimiter = { fg = c.fg.normal },
+    SpecialComment = { fg = c.fg.softer },
     Debug = { fg = c.red_bold },
 
     Underlined = { fg = c.red_bold },
-    Ignore = { fg = c.fg_softest },
+    Ignore = { fg = c.fg.softest },
     Error = { fg = c.red },
     Todo = { fg = c.red_bolder, bold = true },
   }
