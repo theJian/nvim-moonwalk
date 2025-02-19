@@ -33,14 +33,14 @@ local function base(opts, c)
     Italic = { italic = true },
     Bold = { bold = true },
 
-    Conceal = { fg = c.green_soft },
+    Conceal = { fg = c.fg.green_soft },
     SpecialKey = { fg = c.fg.soft },
 
     TabLine = { bg = c.bg.normal, fg = c.bg.normal2, underline = true },
-    TabLineSel = { fg = c.blue, bg = c.none, bold = true, underline = true },
+    TabLineSel = { fg = c.fg.blue, bg = c.none, bold = true, underline = true },
     TabLineFill = { fg = c.bg.normal2, bg = c.bg.normal, underline = true },
 
-    WinBar = { fg = c.blue, underdashed = true },
+    WinBar = { fg = c.fg.blue, underdashed = true },
     WinBarNC = {
       fg = c.bg.normal2,
       bg = c.none,
@@ -51,10 +51,10 @@ local function base(opts, c)
     StatusLineNC = { fg = c.bg.normal2, bg = c.none },
     StatusInactive = { fg = c.fg.soft },
     StatusNormal = { fg = c.fg.normal },
-    StatusInsert = { fg = c.primary_bold },
-    StatusVisual = { fg = c.gold },
-    StatusReplace = { fg = c.red },
-    StatusCommand = { fg = c.green },
+    StatusInsert = { fg = c.fg.primary_bold },
+    StatusVisual = { fg = c.fg.gold },
+    StatusReplace = { fg = c.fg.red },
+    StatusCommand = { fg = c.fg.green },
     StatusTerminal = { link = 'StatusInsert' },
 
     Cursor = { reverse = true },
@@ -72,7 +72,7 @@ local function base(opts, c)
     VertSplit = { link = 'WinSeparator' },
 
     Folded = { fg = c.fg.softest, bg = c.none, italic = true },
-    FoldColumn = { fg = c.primary_bold, bg = c.none },
+    FoldColumn = { fg = c.fg.primary_bold, bg = c.none },
 
     NonText = { fg = c.fg.softest, bg = c.none },
     EndOfBuffer = { link = 'NonText' },
@@ -81,25 +81,25 @@ local function base(opts, c)
 
     DiffAdd = { bg = c.diff_add },
     DiffChange = { bg = c.diff_change },
-    DiffDelete = { fg = c.red_soft, bg = c.diff_delete },
+    DiffDelete = { fg = c.fg.red_soft, bg = c.diff_delete },
     DiffText = { bg = c.diff_text },
-    DiffAdded = { fg = c.green, bg = c.diff_add },
-    DiffRemoved = { fg = c.red, bg = c.diff_delete },
-    DiffChanged = { fg = c.green, bg = c.diff_change },
-    DiffOldFile = { fg = c.red, bold = true, underline = true },
-    DiffNewFile = { fg = c.green, bold = true, underline = true },
-    DiffFile = { fg = c.purple },
-    DiffLine = { fg = c.purple },
-    DiffIndexLine = { fg = c.purple },
+    DiffAdded = { fg = c.fg.green, bg = c.diff_add },
+    DiffRemoved = { fg = c.fg.red, bg = c.diff_delete },
+    DiffChanged = { fg = c.fg.green, bg = c.diff_change },
+    DiffOldFile = { fg = c.fg.red, bold = true, underline = true },
+    DiffNewFile = { fg = c.fg.green, bold = true, underline = true },
+    DiffFile = { fg = c.fg.purple },
+    DiffLine = { fg = c.fg.purple },
+    DiffIndexLine = { fg = c.fg.purple },
 
-    ErrorMsg = { fg = c.red_bold },
-    WarningMsg = { fg = c.fg.bold, bg = c.gold_bg },
+    ErrorMsg = { fg = c.fg.red_bold },
+    WarningMsg = { fg = c.fg.bold, bg = c.bg.gold },
     Question = { fg = c.fg.bold },
 
     Pmenu = { fg = c.none, bg = c.bg.popup },
     PmenuSel = { fg = c.none, bg = c.bg.popup_line, bold = true, blend = 0 },
     PmenuSbar = { fg = c.none, bg = c.bg.popup },
-    PmenuThumb = { fg = c.none, bg = c.red_bold, blend = 0 },
+    PmenuThumb = { fg = c.none, bg = c.fg.red_bold, blend = 0 },
     PmenuKind = { fg = c.fg.softer },
     PmenuKindSel = { fg = c.fg.soft },
     PmenuExtra = { fg = c.fg.softer },
@@ -107,19 +107,19 @@ local function base(opts, c)
 
     WildMenu = { bg = c.bg.popup },
 
-    Search = { bg = c.search },
-    IncSearch = { bg = c.inc_search, bold = true },
-    Substitute = { fg = c.white, bg = c.red_bold, bold = true },
+    Search = { bg = c.bg.gold },
+    IncSearch = { bg = c.bg.inc_search, bold = true },
+    Substitute = { fg = c.white, bg = c.fg.red_bold, bold = true },
     CurSearch = { link = 'IncSearch' },
-    Visual = { bg = c.visual },
+    Visual = { bg = c.bg.visual },
     VisualNOS = { link = 'Visual' },
 
-    CursorColumn = { bg = c.current_line },
+    CursorColumn = { bg = c.bg.current_line },
     ColorColumn = { fg = c.bg.normal2 },
-    CursorLine = { bg = c.current_line },
+    CursorLine = { bg = c.bg.current_line },
     CursorLineFold = { link = 'FoldColumn' },
     CursorLineSign = { bg = c.none },
-    MatchParen = { bg = c.alt_bolder, bold = true },
+    MatchParen = { bg = c.fg.alt_bolder, bold = true },
 
     SpellBad = { undercurl = true },
     SpellCap = { undercurl = true },
@@ -127,15 +127,15 @@ local function base(opts, c)
     SpellRare = { undercurl = true },
 
     Terminal = { fg = c.fg.bold, bg = c.bg.normal },
-    Directory = { fg = c.primary, bg = c.none },
-    QuickFixLine = { bg = c.current_line },
+    Directory = { fg = c.fg.primary, bg = c.none },
+    QuickFixLine = { bg = c.bg.current_line },
 
     MsgArea = { bg = c.none },
 
     FloatShadow = { bg = c.bg.normal2 },
     FloatShadowThrough = { bg = c.none, blend = 100 },
 
-    MoreMsg = { fg = c.green, bold = true },
+    MoreMsg = { fg = c.fg.green, bold = true },
     ModeMsg = { fg = c.fg.normal, bold = true },
   }
 end
