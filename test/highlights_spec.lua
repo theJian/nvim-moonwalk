@@ -210,4 +210,3 @@ test('colors should be easily distinguishable', function()
     end
   end
 end)
-
