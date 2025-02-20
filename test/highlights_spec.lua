@@ -34,7 +34,9 @@
 -- visible for many users. This minimum level should be avoided for any items
 -- important to the use, understanding, or interaction of the site.
 
+local get_colors = require('moonwalk.palette').get_colors
 local calc_apca = require('apca').calc_apca
+local calc_deltaE = require('deltae').calc_deltaE
 local abs = math.abs
 
 local IGNORE = {
@@ -190,3 +192,22 @@ for _, name in pairs(CONTENT_TEXT) do
     end)
   end
 end
+
+test('colors should be easily distinguishable', function()
+  local colors = get_colors(nil, 'default').fg
+  local keys = {}
+
+  for key, _ in pairs(colors) do
+    table.insert(keys, key)
+  end
+
+  for i = 1, #keys do
+    for j = i + 1, #keys do
+      local color1 = colors[keys[i]]
+      local color2 = colors[keys[j]]
+      local deltaE = calc_deltaE(color1, color2)
+      expect(deltaE).toBeGreaterThanOrEqual(3.5)
+    end
+  end
+end)
+
