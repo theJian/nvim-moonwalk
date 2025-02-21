@@ -38,6 +38,7 @@ local get_colors = require('moonwalk.palette').get_colors
 local calc_apca = require('apca').calc_apca
 local calc_deltaE = require('deltae').calc_deltaE
 local abs = math.abs
+local api = vim.api
 
 local IGNORE = {
   'NvimInternalError',
@@ -67,12 +68,12 @@ test('moonwalk is loaded', function()
   expect(vim.g.colors_name).toBe 'moonwalk'
 end)
 
-local normal_bg = vim.api.nvim_get_hl(0, { name = 'Normal' }).bg
+local normal_bg = api.nvim_get_hl(0, { name = 'Normal' }).bg
 -- Test if highlights meet the minimal contrast requirement
 do
-  local hl_groups = vim.api.nvim_get_hl(0, {})
+  local hl_groups = api.nvim_get_hl(0, {})
   for name, _ in pairs(hl_groups) do
-    local hl = vim.api.nvim_get_hl(0, { name = name, link = false })
+    local hl = api.nvim_get_hl(0, { name = name, link = false })
     local fg = hl.fg
     local bg = hl.bg or normal_bg
 
@@ -90,7 +91,7 @@ do
           return true
         end
 
-        name = vim.api.nvim_get_hl(0, { name = name }).link
+        name = api.nvim_get_hl(0, { name = name }).link
       until not name
     end
 
@@ -104,7 +105,7 @@ end
 
 -- Test non-text contrast ratio
 for _, name in pairs(NON_TEXT) do
-  local hl = vim.api.nvim_get_hl(0, { name = name, link = false })
+  local hl = api.nvim_get_hl(0, { name = name, link = false })
   local fg = hl.fg
   local bg = hl.bg or normal_bg
 
@@ -117,7 +118,7 @@ end
 
 -- Test terminal colors
 for i = 1, 7 do
-  local bg = vim.api.nvim_get_hl(0, { name = 'Normal' }).bg
+  local bg = api.nvim_get_hl(0, { name = 'Normal' }).bg
   local fg = vim.g['terminal_color_' .. i]
   test(string.format('contrast of vim.g.terminal_color_%s should be >= Lc 60', i), function()
     expect(abs(calc_apca(fg, bg))).toBeGreaterThanOrEqual(60)
@@ -163,7 +164,7 @@ local CONTENT_TEXT = {
   'Error',
 }
 do
-  local hl_groups = vim.api.nvim_get_hl(0, {})
+  local hl_groups = api.nvim_get_hl(0, {})
   local exclude = {
     '@text.strike',
     '@comment',
@@ -182,7 +183,7 @@ do
   end
 end
 for _, name in pairs(CONTENT_TEXT) do
-  local hl = vim.api.nvim_get_hl(0, { name = name, link = false })
+  local hl = api.nvim_get_hl(0, { name = name, link = false })
   local fg = hl.fg
   local bg = hl.bg or normal_bg
 
@@ -193,7 +194,7 @@ for _, name in pairs(CONTENT_TEXT) do
   end
 end
 
-test('colors should be easily distinguishable', function()
+do
   local colors = get_colors(nil, 'default').fg
   local keys = {}
 
@@ -206,7 +207,29 @@ test('colors should be easily distinguishable', function()
       local color1 = colors[keys[i]]
       local color2 = colors[keys[j]]
       local deltaE = calc_deltaE(color1, color2)
-      expect(deltaE).toBeGreaterThanOrEqual(3.5)
+      test(string.format('fg.%s and fg.%s should be easily distinguishable', keys[i], keys[j]), function()
+        expect(deltaE).toBeGreaterThanOrEqual(5)
+      end)
     end
   end
-end)
+end
+
+do
+  local colors = get_colors(nil, 'default').bg
+  local keys = {}
+
+  for key, _ in pairs(colors) do
+    table.insert(keys, key)
+  end
+
+  for i = 1, #keys do
+    for j = i + 1, #keys do
+      local color1 = colors[keys[i]]
+      local color2 = colors[keys[j]]
+      local deltaE = calc_deltaE(color1, color2)
+      test(string.format('bg.%s and bg.%s should be noticeable', keys[i], keys[j]), function()
+        expect(deltaE).toBeGreaterThanOrEqual(2)
+      end)
+    end
+  end
+end
