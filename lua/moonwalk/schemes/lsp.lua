@@ -1,16 +1,16 @@
 local function treesitter(opts, c)
   return {
     -- Reference Highlights
-    LspReferenceText = { bg = c.bg.alt, underline = true },
-    LspReferenceRead = { bg = c.bg.alt, underline = true },
-    LspReferenceWrite = { bg = c.bg.alt, underline = true },
+    LspReferenceText = { bg = c.bg.active, underdashed = true, bold = true },
+    LspReferenceRead = { bg = c.bg.active, underline = true, bold = true },
+    LspReferenceWrite = { bg = c.bg.active, underdashed = true, italic = true },
 
     -- Codelens
-    LspCodeLens = { fg = c.fg.red_soft, italic = true },
-    LspCodeLensSeparator = { fg = c.fg.red_soft },
+    LspCodeLens = { fg = c.fg.purple30, bold = true },
+    LspCodeLensSeparator = { fg = c.fg.soft30 },
 
-    LspSignatureActiveParameter = { underline = true, bg = c.bg.green },
-    LspInlayHint = { bg = c.fg.softest, fg = c.fg.bold },
+    LspSignatureActiveParameter = { underline = true, bg = c.bg.active },
+    LspInlayHint = { fg = c.fg.soft30, italic = true },
     SnippetTabstop = { link = 'Visual' },
 
     -- Semantic Highlights
@@ -33,7 +33,7 @@ local function treesitter(opts, c)
     ['@lsp.typemod.class.declaration'] = { fg = c.fg.purple_bold, bold = true },
     ['@lsp.mod.deprecated'] = { strikethrough = true },
 
-    LspInfoTitle = { fg = c.fg.bold, bg = c.fg.gold_bolder, bold = true },
+    LspInfoTitle = { fg = c.fg.soft, italic = true },
   }
 end
 

@@ -1,11 +1,11 @@
 local function misc(opts, c)
   return {
     -- check health
-    healthSuccess = { fg = c.white, bg = c.fg.green_bold },
-    helpCommand = { fg = c.none, bg = c.bg.blue },
+    healthSuccess = { fg = c.fg.green45, bold = true },
+    helpCommand = { fg = c.fg.purple45, bold = true },
 
     -- gitconfig
-    gitconfigSection = { fg = c.fg.blue_bold, bold = true },
+    gitconfigSection = { fg = c.fg.red_bold, bold = true },
   }
 end
 

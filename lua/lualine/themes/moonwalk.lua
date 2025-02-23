@@ -1,19 +1,19 @@
-local c = require('moonwalk.palette').get_colors()
+local c = require('moonwalk.palette').get_colors(nil, 'lualine')
 
 return {
   normal = {
-    a = { fg = c.white, bg = c.fg.bold, gui = 'bold' },
-    b = { fg = c.fg.primary, bg = c.bg.gold },
-    c = { fg = c.fg.primary, bg = c.bg.normal },
+    a = { fg = c.block_black.fg, bg = c.block_black.bg, gui = 'bold' },
+    b = { fg = c.block_beige.fg, bg = c.block_beige.bg },
+    c = { fg = c.block_soft.fg, bg = c.block_soft.bg },
   },
-  insert = { a = { fg = c.white, bg = c.fg.primary, gui = 'bold' } },
-  visual = { a = { fg = c.fg.bold, bg = c.fg.gold_bolder, gui = 'bold' } },
-  replace = { a = { fg = c.white, bg = c.fg.red_bolder, gui = 'bold' } },
-  command = { a = { fg = c.white, bg = c.fg.purple, gui = 'bold' } },
-  terminal = { a = { fg = c.white, bg = c.fg.green, gui = 'bold' } },
+  insert = { a = { fg = c.block_blue.fg, bg = c.block_blue.bg, gui = 'bold' } },
+  visual = { a = { fg = c.block_cyan.fg, bg = c.block_cyan.bg, gui = 'bold' } },
+  replace = { a = { fg = c.block_red.fg, bg = c.block_red.bg, gui = 'bold' } },
+  command = { a = { fg = c.block_purple.fg, bg = c.block_purple.bg, gui = 'bold' } },
+  terminal = { a = { fg = c.block_green.fg, bg = c.block_green.bg, gui = 'bold' } },
   inactive = {
-    a = { fg = c.fg.blue, bg = c.bg.normal2, gui = 'bold' },
-    b = { fg = c.fg.softest, bg = c.bg.gold },
-    c = { fg = c.fg.softest, bg = c.bg.normal },
+    a = { fg = c.block_soft.fg, bg = c.block_soft.bg, gui = 'bold' },
+    b = { fg = c.block_soft.fg, bg = c.block_soft.bg },
+    c = { fg = c.block_soft.fg, bg = c.block_soft.bg },
   },
 }

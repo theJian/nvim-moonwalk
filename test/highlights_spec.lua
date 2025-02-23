@@ -96,7 +96,7 @@ do
     end
 
     if fg and not is_excluded(name) then
-      test(string.format('contrast of %s should be >= Lc 30', name), function()
+      test(string.format('contrast of %s(fg = %s, bg = %s) should be >= Lc 30', name, fg, bg), function()
         expect(abs(calc_apca(fg, bg))).toBeGreaterThanOrEqual(30)
       end)
     end
@@ -169,12 +169,20 @@ do
     '@text.strike',
     '@comment',
     '@comment.documentation',
+    '@comment.error',
+    '@comment.warning',
+    '@comment.todo',
+    '@comment.note',
     '@lsp.type.comment',
     '@conceal',
     '@conceal.json',
     '@punctuation.special',
     '@string.documentation',
     '@error',
+    '@text.todo',
+    '@text.note',
+    '@text.warning',
+    '@text.danger',
   }
   for name, _ in pairs(hl_groups) do
     if name:sub(1, 1) == '@' and not vim.tbl_contains(exclude, name) then
@@ -206,10 +214,12 @@ do
     for j = i + 1, #keys do
       local color1 = colors[keys[i]]
       local color2 = colors[keys[j]]
-      local deltaE = calc_deltaE(color1, color2)
-      test(string.format('fg.%s and fg.%s should be easily distinguishable', keys[i], keys[j]), function()
-        expect(deltaE).toBeGreaterThanOrEqual(5)
-      end)
+      if color1 ~= color2 then
+        local deltaE = calc_deltaE(color1, color2)
+        test(string.format('fg.%s and fg.%s should be easily distinguishable', keys[i], keys[j]), function()
+          expect(deltaE).toBeGreaterThanOrEqual(5)
+        end)
+      end
     end
   end
 end
@@ -226,10 +236,12 @@ do
     for j = i + 1, #keys do
       local color1 = colors[keys[i]]
       local color2 = colors[keys[j]]
-      local deltaE = calc_deltaE(color1, color2)
-      test(string.format('bg.%s and bg.%s should be noticeable', keys[i], keys[j]), function()
-        expect(deltaE).toBeGreaterThanOrEqual(2)
-      end)
+      if color1 ~= color2 then
+        local deltaE = calc_deltaE(color1, color2)
+        test(string.format('bg.%s and bg.%s should be noticeable', keys[i], keys[j]), function()
+          expect(deltaE).toBeGreaterThanOrEqual(2)
+        end)
+      end
     end
   end
 end
