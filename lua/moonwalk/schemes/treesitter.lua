@@ -6,9 +6,9 @@ local function treesitter(opts, c)
     ['@comment'] = { link = 'Comment' }, -- line and block comments
     ['@comment.documentation'] = { link = 'SpecialComment' }, -- comments documenting code
     ['@comment.error'] = { fg = c.fg.red45 }, -- error-type comments (e.g. `ERROR`, `FIXME`, `DEPRECATED`)
-    ['@comment.warning'] = { fg = c.fg.gold45 },        -- warning-type comments (e.g. `WARNING`, `FIX`, `HACK`)
-    ['@comment.todo'] = { fg = c.fg.green45 },           -- todo-type comments (e.g. `TODO`, `WIP`)
-    ['@comment.note'] = { fg = c.fg.cyan45 },          -- note-type comments (e.g. `NOTE`, `INFO`, `XXX`)
+    ['@comment.warning'] = { fg = c.fg.gold45 }, -- warning-type comments (e.g. `WARNING`, `FIX`, `HACK`)
+    ['@comment.todo'] = { fg = c.fg.green45 }, -- todo-type comments (e.g. `TODO`, `WIP`)
+    ['@comment.note'] = { fg = c.fg.cyan45 }, -- note-type comments (e.g. `NOTE`, `INFO`, `XXX`)
     ['@error'] = { sp = c.fg.red, undercurl = true }, -- syntax/parser errors
     ['@none'] = { link = 'Normal' }, -- completely disable the highlight
     ['@preproc'] = { link = 'PreProc' }, -- various preprocessor directives & shebangs

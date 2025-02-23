@@ -43,7 +43,6 @@ local C = {
   purple = '#4c2c92',
 }
 
-
 M.default = {
   fg = {
     normal = C.fg,
