@@ -204,11 +204,7 @@ end
 
 do
   local colors = get_colors(nil, 'default').fg
-  local keys = {}
-
-  for key, _ in pairs(colors) do
-    table.insert(keys, key)
-  end
+  local keys = vim.tbl_keys(colors)
 
   for i = 1, #keys do
     for j = i + 1, #keys do
@@ -226,11 +222,7 @@ end
 
 do
   local colors = get_colors(nil, 'default').bg
-  local keys = {}
-
-  for key, _ in pairs(colors) do
-    table.insert(keys, key)
-  end
+  local keys = vim.tbl_keys(colors)
 
   for i = 1, #keys do
     for j = i + 1, #keys do
@@ -242,6 +234,28 @@ do
           expect(deltaE).toBeGreaterThanOrEqual(2)
         end)
       end
+    end
+  end
+end
+
+do
+  local colors = get_colors(nil, 'default')
+  local fg_colors, bg_colors = colors.fg, colors.bg
+
+  local function extract_number(str)
+    local number = string.match(str, "%d+")
+    if number then
+      return tonumber(number)
+    end
+  end
+
+  for fg_name, fg_color in pairs(fg_colors) do
+    for bg_name, bg_color in pairs(bg_colors) do
+      local deltaE = calc_apca(fg_color, bg_color)
+      local min_deltaE = extract_number(fg_name) or 60
+      test(string.format('contrast of fg(%s) and bg(%s) should be >= Lc %d', fg_name, bg_name, min_deltaE), function()
+        expect(deltaE).toBeGreaterThanOrEqual(min_deltaE)
+      end)
     end
   end
 end
