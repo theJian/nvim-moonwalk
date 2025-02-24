@@ -1,4 +1,4 @@
-name: APCA Contrast Ratio Test
+name: Accessibility Test
 
 on:
   push:
