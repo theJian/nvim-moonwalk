@@ -116,6 +116,9 @@ local function treesitter(opts, c)
     -- conceal
     ['@conceal'] = { link = 'Conceal' }, -- for captures that are only used for concealing
     ['@conceal.json'] = { link = 'Conceal' }, -- for captures that are only used for concealing
+
+    -- markup
+    ['@markup.heading'] = { fg = c.fg.cyan_bold },
   }
 end
 
