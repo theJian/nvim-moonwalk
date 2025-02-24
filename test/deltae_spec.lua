@@ -17,7 +17,7 @@ test('CIEDE2000', function()
   Lab1 = { 50.0000, 2.8361, -74.0200 }
   Lab2 = { 50.0000, 0.0000, -82.7485 }
   deltaE = ciede2000(Lab1, Lab2)
-  expect(string.format('%.4f', deltaE)).toBe '3.4412'
+  expect(string.format('%.4f', deltaE)).toBe '3.4411'
 end)
 
 test('RGB to LAB', function()

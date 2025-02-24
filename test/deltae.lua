@@ -1,85 +1,72 @@
-local sqrt, sin, cos, atan2, rad, deg, abs, exp, pow =
-  math.sqrt, math.sin, math.cos, math.atan2, math.rad, math.deg, math.abs, math.exp, math.pow
-
 local util = require 'util'
-local mean, degrees, radians = util.mean, util.degrees, util.radians
 local M = {}
 
 function M.ciede2000(lab1, lab2)
-  local L1, a1, b1 = lab1[1], lab1[2], lab1[3]
-  local L2, a2, b2 = lab2[1], lab2[2], lab2[3]
+    local L1, a1, b1 = lab1[1], lab1[2], lab1[3]
+    local L2, a2, b2 = lab2[1], lab2[2], lab2[3]
 
-  -- C* calculation
-  local C1 = sqrt(a1 ^ 2 + b1 ^ 2)
-  local C2 = sqrt(a2 ^ 2 + b2 ^ 2)
-  local C_mean = mean(C1, C2)
+    local kL = 1.0
+    local kC = 1.0
+    local kH = 1.0
 
-  -- G calculation
-  local G = 0.5 * (1 - sqrt((C_mean ^ 7) / (C_mean ^ 7 + 25 ^ 7)))
-  local a1_prime = a1 * (1 + G)
-  local a2_prime = a2 * (1 + G)
+    local C1 = math.sqrt(a1^2 + b1^2)
+    local C2 = math.sqrt(a2^2 + b2^2)
 
-  -- C'_ calculation
-  local C1_prime = sqrt(a1_prime ^ 2 + b1 ^ 2)
-  local C2_prime = sqrt(a2_prime ^ 2 + b2 ^ 2)
+    local C_avg = (C1 + C2) / 2
 
-  -- h'_ calculation
-  local h1_prime = degrees(atan2(b1, a1_prime)) % 360
-  local h2_prime = degrees(atan2(b2, a2_prime)) % 360
+    local G = 0.5 * (1 - math.sqrt(C_avg^7 / (C_avg^7 + 25^7)))
 
-  -- dL', dC', dH' calculation
-  local dL_prime = L2 - L1
-  local dC_prime = C2_prime - C1_prime
+    local a1_prime = a1 * (1 + G)
+    local a2_prime = a2 * (1 + G)
 
-  local dh_prime
-  if C1_prime * C2_prime == 0 then
-    dh_prime = 0
-  else
-    dh_prime = h2_prime - h1_prime
-    if dh_prime > 180 then
-      dh_prime = dh_prime - 360
+    local C1_prime = math.sqrt(a1_prime^2 + b1^2)
+    local C2_prime = math.sqrt(a2_prime^2 + b2^2)
+
+    local h1_prime = math.deg(math.atan2(b1, a1_prime)) % 360
+    local h2_prime = math.deg(math.atan2(b2, a2_prime)) % 360
+
+    local delta_h_prime
+    if math.abs(h2_prime - h1_prime) <= 180 then
+        delta_h_prime = h2_prime - h1_prime
+    else
+        delta_h_prime = (h2_prime - h1_prime) - 360 * (h2_prime > h1_prime and 1 or -1)
     end
-    if dh_prime < -180 then
-      dh_prime = dh_prime + 360
+
+    local H_avg_prime
+    if math.abs(h1_prime - h2_prime) > 180 then
+        H_avg_prime = (h1_prime + h2_prime + 360) / 2
+    else
+        H_avg_prime = (h1_prime + h2_prime) / 2
     end
-  end
 
-  local dH_prime = 2 * sqrt(C1_prime * C2_prime) * sin(radians(dh_prime) / 2)
+    local T = 1 -
+        0.17 * math.cos(math.rad(H_avg_prime - 30)) +
+        0.24 * math.cos(math.rad(2 * H_avg_prime)) +
+        0.32 * math.cos(math.rad(3 * H_avg_prime + 6)) -
+        0.20 * math.cos(math.rad(4 * H_avg_prime - 63))
 
-  -- H'_ mean calculation
-  local H_mean
-  if C1_prime * C2_prime == 0 then
-    H_mean = h1_prime + h2_prime
-  else
-    H_mean = mean(h1_prime, h2_prime)
-    if abs(h1_prime - h2_prime) > 180 then
-      H_mean = H_mean + 180
-    end
-  end
-  H_mean = H_mean % 360
+    local delta_theta = 30 * math.exp(-((H_avg_prime - 275) / 25)^2)
 
-  -- T calculation
-  local T = 1
-    - 0.17 * cos(radians(H_mean - 30))
-    + 0.24 * cos(radians(2 * H_mean))
-    + 0.32 * cos(radians(3 * H_mean + 6))
-    - 0.20 * cos(radians(4 * H_mean - 63))
+    local R_C = 2 * math.sqrt(C1_prime^7 / (C1_prime^7 + 25^7))
 
-  -- SL, SC, SH calculation
-  local SL = 1 + ((0.015 * (L1 + L2) / 2 - 50) ^ 2) / sqrt(20 + ((0.015 * (L1 + L2) / 2 - 50) ^ 2))
-  local SC = 1 + 0.045 * C_mean
-  local SH = 1 + 0.015 * C_mean * T
+    local delta_L_prime = L2 - L1
+    local delta_C_prime = C2_prime - C1_prime
+    local delta_H_prime = 2 * math.sqrt(C1_prime * C2_prime) * math.sin(math.rad(delta_h_prime / 2))
 
-  -- RT calculation
-  local dTheta = 30 * exp(-((H_mean - 275) / 25) ^ 2)
-  local RC = 2 * sqrt((C_mean ^ 7) / (C_mean ^ 7 + 25 ^ 7))
-  local RT = -RC * sin(radians(2 * dTheta))
+    local S_L = 1 + (0.015 * (L1 + L2 - 50)^2) / math.sqrt(20 + (L1 + L2 - 50)^2)
+    local S_C = 1 + 0.045 * (C1_prime + C2_prime) / 2
+    local S_H = 1 + 0.015 * (C1_prime + C2_prime) / 2 * T
 
-  -- Final ΔE00 calculation
-  local deltaE =
-    sqrt((dL_prime / SL) ^ 2 + (dC_prime / SC) ^ 2 + (dH_prime / SH) ^ 2 + RT * (dC_prime / SC) * (dH_prime / SH))
+    local R_T = -math.sin(math.rad(2 * delta_theta)) * R_C
 
-  return deltaE
+    local delta_E = math.sqrt(
+        (delta_L_prime / (kL * S_L))^2 +
+        (delta_C_prime / (kC * S_C))^2 +
+        (delta_H_prime / (kH * S_H))^2 +
+        (R_T * (delta_C_prime / (kC * S_C)) * (delta_H_prime / (kH * S_H)))
+    )
+
+    return delta_E
 end
 
 function M.rgb_to_lab(rgb)
