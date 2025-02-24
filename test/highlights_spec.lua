@@ -126,8 +126,8 @@ for i = 1, 7 do
   end)
 
   local fg_bright = vim.g['terminal_color_' .. i + 8]
-  test(string.format('contrast of bright color vim.g.terminal_color_%s should be >= Lc 45', i + 8), function()
-    expect(abs(calc_apca(fg_bright, bg))).toBeGreaterThanOrEqual(45)
+  test(string.format('contrast of vim.g.terminal_color_%s should be >= Lc 60', i + 8), function()
+    expect(abs(calc_apca(fg_bright, bg))).toBeGreaterThanOrEqual(60)
   end)
 end
 
@@ -193,6 +193,8 @@ do
     '@text.note',
     '@text.warning',
     '@text.danger',
+    '@markup.heading.1.delimiter',
+    '@markup.heading.2.delimiter',
     '@markup.heading.1.delimiter.vimdoc',
     '@markup.heading.2.delimiter.vimdoc',
   }

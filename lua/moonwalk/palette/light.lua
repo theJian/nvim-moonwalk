@@ -1,52 +1,9 @@
 local M = {}
 
-local C = {
-  primary_bold = '#105bd8',
-  primary = '#002fa7',
-  fg = '#061f4a',
-  fg_bold = '#212121',
-  gray = '#5b616b',
-  gray_dark = '#323a45',
-  gray_light = '#aeb0b5',
-  gray_lighter = '#d6d7d9',
-  gray_lightest = '#f1f1f1',
-  fg_soft = '#494440',
-  bg = '#e4e2e0',
-  bg2 = '#8ba6ca',
-  fg_softer = '#8c8a8a',
-  white = '#ffffff',
-  alt_bolder = '#02bfe7',
-  alt = '#046b99',
-  alt_bold = '#00a6d2',
-  alt_soft = '#9bdaf1',
-  alt_bg = '#e1f3f8',
-  red_bolder = '#dd361c',
-  red = '#801a17',
-  red_bold = '#c22c1f',
-  red_soft = '#c4837a',
-  red_bg = '#f9e0de',
-  gold = '#61330e',
-  gold_bold = '#965c12',
-  gold_bolder = '#ff9d1e',
-  gold_soft = '#f9aa43',
-  gold_softer = '#ffc375',
-  gold_bg = '#ffebd1',
-  green = '#174A24',
-  green_bold = '#29783b',
-  green_soft = '#4aa564',
-  green_softer = '#94bfa2',
-  green_bg = '#e7f4e4',
-  blue = '#205493',
-  blue_bold = '#426b9e',
-  blue_bg = '#dce4ef',
-  purple_bold = '#6F46C8',
-  purple = '#4c2c92',
-}
-
 M.default = {
   fg = {
-    normal = C.fg,
-    bold = C.fg_bold,
+    normal = '#061f4a',
+    bold = '#212121',
     soft = '#494440',
     soft45 = '#707275',
     soft30 = '#9c958d',
@@ -111,29 +68,29 @@ M.lualine = {
 }
 
 M.term = {
-  black = C.bg,
-  bright_black = C.gray,
+  black = M.default.bg.normal,
+  bright_black = M.default.bg.current_line,
 
-  red = C.red,
-  bright_red = C.red_bolder,
+  red = M.default.fg.red_bold,
+  bright_red = M.default.fg.red,
 
-  green = C.green,
-  bright_green = C.green_bold,
+  green = M.default.fg.green_bold,
+  bright_green = M.default.fg.green,
 
-  yellow = C.gold,
-  bright_yellow = C.gold_bold,
+  yellow = M.default.fg.gold_bold,
+  bright_yellow = M.default.fg.gold,
 
-  blue = C.primary,
-  bright_blue = C.primary_bold,
+  blue = M.default.fg.blue_bold,
+  bright_blue = M.default.fg.blue,
 
-  purple = C.purple,
-  bright_purple = C.purple_bold,
+  purple = M.default.fg.purple_bold,
+  bright_purple = M.default.fg.purple,
 
-  cyan = C.blue,
-  bright_cyan = C.blue_bold,
+  cyan = M.default.fg.cyan_bold,
+  bright_cyan = M.default.fg.cyan,
 
-  white = C.fg,
-  bright_white = C.fg_bold,
+  white = M.default.fg.normal,
+  bright_white = M.default.fg.bold,
 }
 
 return M
