@@ -229,11 +229,11 @@ do
       local color2 = colors[keys[j]]
       if color1 ~= color2 then
         local deltaE = calc_deltaE(color1, color2)
-        test(string.format('fg.%s and fg.%s should be easily distinguishable', keys[i], keys[j]), function()
-          local desired_deltaE = 5
-          if extract_prefix(keys[i]) == extract_prefix(keys[j]) then
-            desired_deltaE = 3
-          end
+        local desired_deltaE = 5
+        if extract_prefix(keys[i]) == extract_prefix(keys[j]) then
+          desired_deltaE = 3
+        end
+        test(string.format('fg.%s and fg.%s should be easily distinguishable(ΔE>=%d)', keys[i], keys[j], desired_deltaE), function()
           expect(deltaE).toBeGreaterThanOrEqual(desired_deltaE)
         end)
       end
