@@ -233,9 +233,12 @@ do
         if extract_prefix(keys[i]) == extract_prefix(keys[j]) then
           desired_deltaE = 3
         end
-        test(string.format('fg.%s and fg.%s should be easily distinguishable(ΔE>=%d)', keys[i], keys[j], desired_deltaE), function()
-          expect(deltaE).toBeGreaterThanOrEqual(desired_deltaE)
-        end)
+        test(
+          string.format('fg.%s and fg.%s should be easily distinguishable(ΔE>=%d)', keys[i], keys[j], desired_deltaE),
+          function()
+            expect(deltaE).toBeGreaterThanOrEqual(desired_deltaE)
+          end
+        )
       end
     end
   end
