@@ -193,8 +193,6 @@ do
     '@text.note',
     '@text.warning',
     '@text.danger',
-    '@markup.heading.1.delimiter',
-    '@markup.heading.2.delimiter',
     '@markup.heading.1.delimiter.vimdoc',
     '@markup.heading.2.delimiter.vimdoc',
   }

@@ -119,8 +119,8 @@ local function treesitter(opts, c)
 
     -- markup
     ['@markup.heading'] = { fg = c.fg.cyan_bold, bold = true },
-    ['@markup.heading.1.delimiter'] = { fg = c.fg.cyan30 },
-    ['@markup.heading.2.delimiter'] = { fg = c.fg.cyan30 },
+    ['@markup.heading.1.delimiter.vimdoc'] = { fg = c.fg.cyan30 },
+    ['@markup.heading.2.delimiter.vimdoc'] = { fg = c.fg.cyan30 },
   }
 end
 
