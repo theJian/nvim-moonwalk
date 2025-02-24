@@ -5,7 +5,7 @@ M.default = {
     normal = '#061f4a',
     bold = '#212121',
     soft = '#494440',
-    soft45 = '#707275',
+    soft45 = '#7a7c7f',
     soft30 = '#9c958d',
 
     blue = '#0d50c5',
