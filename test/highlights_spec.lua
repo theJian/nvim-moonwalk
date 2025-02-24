@@ -243,7 +243,7 @@ do
   local fg_colors, bg_colors = colors.fg, colors.bg
 
   local function extract_number(str)
-    local number = string.match(str, "%d+")
+    local number = string.match(str, '%d+')
     if number then
       return tonumber(number)
     end
