@@ -213,7 +213,7 @@ for _, name in pairs(CONTENT_TEXT) do
 end
 
 local function extract_prefix(str)
-  local prefix = string.match(str, "^(%a+)")
+  local prefix = string.match(str, '^(%a+)')
   return prefix
 end
 
@@ -276,10 +276,7 @@ do
       local should_avoid_comb = bg_min_deltaE and fg_min_deltaE and fg_min_deltaE <= bg_min_deltaE
 
       if not should_avoid_comb then
-        local min_deltaE = math.min(
-          fg_min_deltaE or 60,
-          bg_min_deltaE or 60
-        )
+        local min_deltaE = math.min(fg_min_deltaE or 60, bg_min_deltaE or 60)
         test(string.format('contrast of fg(%s) and bg(%s) should be >= Lc %d', fg_name, bg_name, min_deltaE), function()
           expect(deltaE).toBeGreaterThanOrEqual(min_deltaE)
         end)
