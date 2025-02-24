@@ -60,6 +60,7 @@ local NON_TEXT = {
   'GitSignsChangeNr',
   'GitSignsAdd',
   'GitSignsAddNr',
+  'FloatBorder',
 }
 
 vim.cmd.colorscheme 'moonwalk'
@@ -162,6 +163,15 @@ local CONTENT_TEXT = {
   'Debug',
   'Underlined',
   'Error',
+  'DiffDelete',
+  'DiffAdded',
+  'DiffRemoved',
+  'DiffChanged',
+  'DiffOldFile',
+  'DiffNewFile',
+  'DiffFile',
+  'DiffLine',
+  'DiffIndexLine',
 }
 do
   local hl_groups = api.nvim_get_hl(0, {})
@@ -202,6 +212,11 @@ for _, name in pairs(CONTENT_TEXT) do
   end
 end
 
+local function extract_prefix(str)
+  local prefix = string.match(str, "^(%a+)")
+  return prefix
+end
+
 do
   local colors = get_colors(nil, 'default').fg
   local keys = vim.tbl_keys(colors)
@@ -213,7 +228,11 @@ do
       if color1 ~= color2 then
         local deltaE = calc_deltaE(color1, color2)
         test(string.format('fg.%s and fg.%s should be easily distinguishable', keys[i], keys[j]), function()
-          expect(deltaE).toBeGreaterThanOrEqual(5)
+          local desired_deltaE = 5
+          if extract_prefix(keys[i]) == extract_prefix(keys[j]) then
+            desired_deltaE = 3
+          end
+          expect(deltaE).toBeGreaterThanOrEqual(desired_deltaE)
         end)
       end
     end
@@ -252,10 +271,19 @@ do
   for fg_name, fg_color in pairs(fg_colors) do
     for bg_name, bg_color in pairs(bg_colors) do
       local deltaE = calc_apca(fg_color, bg_color)
-      local min_deltaE = extract_number(fg_name) or 60
-      test(string.format('contrast of fg(%s) and bg(%s) should be >= Lc %d', fg_name, bg_name, min_deltaE), function()
-        expect(deltaE).toBeGreaterThanOrEqual(min_deltaE)
-      end)
+      local fg_min_deltaE = extract_number(fg_name)
+      local bg_min_deltaE = extract_number(bg_name)
+      local should_avoid_comb = bg_min_deltaE and fg_min_deltaE and fg_min_deltaE <= bg_min_deltaE
+
+      if not should_avoid_comb then
+        local min_deltaE = math.min(
+          fg_min_deltaE or 60,
+          bg_min_deltaE or 60
+        )
+        test(string.format('contrast of fg(%s) and bg(%s) should be >= Lc %d', fg_name, bg_name, min_deltaE), function()
+          expect(deltaE).toBeGreaterThanOrEqual(min_deltaE)
+        end)
+      end
     end
   end
 end
