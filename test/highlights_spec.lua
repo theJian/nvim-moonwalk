@@ -193,6 +193,8 @@ do
     '@text.note',
     '@text.warning',
     '@text.danger',
+    '@markup.heading.1.delimiter.vimdoc',
+    '@markup.heading.2.delimiter.vimdoc',
   }
   for name, _ in pairs(hl_groups) do
     if name:sub(1, 1) == '@' and not vim.tbl_contains(exclude, name) then
