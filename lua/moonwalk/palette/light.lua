@@ -68,8 +68,8 @@ M.lualine = {
 }
 
 M.term = {
-  black = M.default.bg.normal,
-  bright_black = M.default.bg.current_line,
+  black = M.default.bg.popup,
+  bright_black = M.default.bg.popup_line,
 
   red = M.default.fg.red_bold,
   bright_red = M.default.fg.red,
@@ -89,8 +89,8 @@ M.term = {
   cyan = M.default.fg.cyan_bold,
   bright_cyan = M.default.fg.cyan,
 
-  white = M.default.fg.normal,
-  bright_white = M.default.fg.bold,
+  white = M.default.fg.bold,
+  bright_white = M.default.fg.soft,
 }
 
 return M
