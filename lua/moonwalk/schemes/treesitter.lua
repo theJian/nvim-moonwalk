@@ -118,9 +118,9 @@ local function treesitter(opts, c)
     ['@conceal.json'] = { link = 'Conceal' }, -- for captures that are only used for concealing
 
     -- markup
-    ['@markup.heading'] = { fg = c.fg.cyan_bold, bold = true },
-    ['@markup.heading.1.delimiter.vimdoc'] = { fg = c.fg.cyan30 },
-    ['@markup.heading.2.delimiter.vimdoc'] = { fg = c.fg.cyan30 },
+    ['@markup.heading'] = { fg = c.fg.purple_bold, bold = true },
+    ['@markup.heading.1.delimiter.vimdoc'] = { fg = c.fg.purple30 },
+    ['@markup.heading.2.delimiter.vimdoc'] = { fg = c.fg.purple30 },
   }
 end
 

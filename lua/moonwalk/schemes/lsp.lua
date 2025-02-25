@@ -6,7 +6,7 @@ local function treesitter(opts, c)
     LspReferenceWrite = { bg = c.bg.active, underdashed = true, italic = true },
 
     -- Codelens
-    LspCodeLens = { fg = c.fg.purple30, bold = true },
+    LspCodeLens = { fg = c.fg.purple45, bold = true },
     LspCodeLensSeparator = { fg = c.fg.soft30 },
 
     LspSignatureActiveParameter = { underline = true, bg = c.bg.active },

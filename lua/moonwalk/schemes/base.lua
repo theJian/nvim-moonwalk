@@ -71,8 +71,8 @@ local function base(opts, c)
     },
     VertSplit = { link = 'WinSeparator' },
 
-    Folded = { fg = c.fg.purple30, bg = 'NONE' },
-    FoldColumn = { fg = c.fg.purple30, bg = 'NONE' },
+    Folded = { fg = c.fg.soft45, bg = 'NONE' },
+    FoldColumn = { fg = c.fg.soft45, bg = 'NONE', bold = true },
 
     NonText = { fg = c.fg.soft30, bg = 'NONE' },
     EndOfBuffer = { link = 'NonText' },
