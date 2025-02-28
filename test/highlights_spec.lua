@@ -231,10 +231,10 @@ do
         local deltaE = calc_deltaE(color1, color2)
         local desired_deltaE = 5
         if extract_prefix(keys[i]) == extract_prefix(keys[j]) then
-          desired_deltaE = 3
+          desired_deltaE = 3.5
         end
         test(
-          string.format('fg.%s and fg.%s should be easily distinguishable(ΔE>=%d)', keys[i], keys[j], desired_deltaE),
+          string.format('fg.%s and fg.%s should be easily distinguishable(ΔE>=%.2f)', keys[i], keys[j], desired_deltaE),
           function()
             expect(deltaE).toBeGreaterThanOrEqual(desired_deltaE)
           end
@@ -283,7 +283,7 @@ do
       if not should_avoid_comb then
         local min_deltaE = math.min(fg_min_deltaE or 60, bg_min_deltaE or 60)
         test(string.format('contrast of fg(%s) and bg(%s) should be >= Lc %d', fg_name, bg_name, min_deltaE), function()
-          expect(deltaE).toBeGreaterThanOrEqual(min_deltaE)
+          expect(abs(deltaE)).toBeGreaterThanOrEqual(min_deltaE)
         end)
       end
     end

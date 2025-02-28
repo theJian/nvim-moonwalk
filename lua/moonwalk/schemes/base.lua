@@ -15,25 +15,25 @@ local function base(opts, c)
 
     FloatTitle = {
       fg = c.fg.bold,
-      bg = c.bg.float,
+      bg = c.bg.popup,
       blend = vim.o.winblend or 0,
       bold = true,
     },
     FloatBorder = {
       fg = c.fg.soft30,
-      bg = c.bg.float,
+      bg = c.bg.popup,
       blend = vim.o.winblend or 0,
     },
     NormalFloat = {
       fg = c.fg.normal,
-      bg = c.bg.float,
+      bg = c.bg.popup,
       blend = vim.o.winblend or 0,
     },
 
     Italic = { italic = true },
     Bold = { bold = true },
 
-    Conceal = { fg = c.fg.purple45 },
+    Conceal = { fg = c.fg.cyan45 },
     SpecialKey = { fg = c.fg.soft },
 
     TabLine = { fg = c.fg.normal, bg = c.bg.normal, underline = true },
@@ -47,7 +47,7 @@ local function base(opts, c)
       underdashed = true,
     },
 
-    StatusLine = { fg = c.fg.normal, bg = c.bg.float },
+    StatusLine = { fg = c.fg.normal, bg = c.bg.popup },
     StatusLineNC = { fg = c.fg.soft30, bg = 'NONE' },
     StatusInactive = { fg = c.fg.soft },
     StatusNormal = { fg = c.fg.normal },
@@ -71,7 +71,7 @@ local function base(opts, c)
     },
     VertSplit = { link = 'WinSeparator' },
 
-    Folded = { fg = c.fg.soft45, bg = 'NONE' },
+    Folded = { fg = c.fg.soft30, bg = 'NONE' },
     FoldColumn = { fg = c.fg.soft45, bg = 'NONE', bold = true },
 
     NonText = { fg = c.fg.soft30, bg = 'NONE' },
@@ -101,19 +101,19 @@ local function base(opts, c)
     Question = { fg = c.fg.bold, italic = true },
 
     Pmenu = { fg = 'NONE', bg = c.bg.popup },
-    PmenuSel = { fg = 'NONE', bg = c.bg.popup_line, bold = true, blend = 0 },
+    PmenuSel = { fg = 'NONE', bg = c.bg.popup_line or c.bg.popup_line30, bold = true, blend = 0 },
     PmenuSbar = { fg = 'NONE', bg = c.bg.popup },
     PmenuThumb = { fg = 'NONE', bg = c.fg.blue, blend = 0 },
     PmenuKind = { fg = c.fg.bold, italic = true },
     PmenuKindSel = { fg = c.fg.bold, bold = true },
-    PmenuExtra = { fg = c.fg.blue45 },
-    PmenuExtraSel = { fg = c.fg.blue45, bold = true },
+    PmenuExtra = { fg = c.fg.gold45 },
+    PmenuExtraSel = { fg = c.fg.gold45, bold = true },
 
     WildMenu = { bg = c.bg.popup },
 
     Search = { bg = c.bg.search30 },
     IncSearch = { bg = c.bg.search30, bold = true },
-    Substitute = { bg = c.bg.visual30, bold = true, underdashed = true },
+    Substitute = { bg = c.bg.visual30, bold = true, underline = true },
     CurSearch = { link = 'IncSearch' },
     Visual = { bg = c.bg.visual30 },
     VisualNOS = { link = 'Visual' },
@@ -123,7 +123,7 @@ local function base(opts, c)
     CursorLine = { bg = c.bg.current_line },
     CursorLineFold = { link = 'FoldColumn' },
     CursorLineSign = { bg = 'NONE' },
-    MatchParen = { bg = c.bg.active, bold = true },
+    MatchParen = { bold = true, underline = true },
 
     SpellBad = { undercurl = true },
     SpellCap = { undercurl = true },

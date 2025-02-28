@@ -59,7 +59,4 @@ Open a GitHub Issue for:
 
 ### Code Contributions
 
-Ensure changes pass accessibility tests:
-```bash
-make test
-```
+Ensure changes pass accessibility tests: `make test`
