@@ -1,7 +1,7 @@
 local M = {}
 
 function M.get_colors(flavour, group)
-  flavour = flavour or 'light'
+  flavour = flavour or vim.o.background  or 'light'
   group = group or 'default'
 
   local module = 'moonwalk.palette.' .. flavour

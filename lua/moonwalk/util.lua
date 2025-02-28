@@ -2,14 +2,6 @@ local schemes = require 'moonwalk.schemes'
 
 local M = {}
 
-function M.get_palette()
-  if vim.env.MOONWALK_DEV then
-    package.loaded['moonwalk.palette.light'] = nil
-  end
-  local palette = require 'moonwalk.palette.light'
-  return palette
-end
-
 function M.load_schemes(opts)
   local colors = require('moonwalk.palette').get_colors()
   for _, name in ipairs(schemes.exports) do

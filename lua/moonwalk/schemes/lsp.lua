@@ -1,15 +1,15 @@
 local function treesitter(opts, c)
   return {
     -- Reference Highlights
-    LspReferenceText = { bg = c.bg.active, underdashed = true, bold = true },
-    LspReferenceRead = { bg = c.bg.active, underline = true, bold = true },
-    LspReferenceWrite = { bg = c.bg.active, underdashed = true, italic = true },
+    LspReferenceText = { underdashed = true, sp = c.fg.green },
+    LspReferenceRead = { fg = c.fg.blue45, underline = true },
+    LspReferenceWrite = { fg = c.fg.purple45, underline = true },
 
     -- Codelens
-    LspCodeLens = { fg = c.fg.purple45, bold = true },
+    LspCodeLens = { fg = c.fg.cyan45, bold = true },
     LspCodeLensSeparator = { fg = c.fg.soft30 },
 
-    LspSignatureActiveParameter = { underline = true, bg = c.bg.active },
+    LspSignatureActiveParameter = { fg = c.fg.blue45 },
     LspInlayHint = { fg = c.fg.soft30, italic = true },
     SnippetTabstop = { link = 'Visual' },
 
