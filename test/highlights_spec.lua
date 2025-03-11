@@ -118,7 +118,13 @@ for _, name in pairs(NON_TEXT) do
 end
 
 -- Test terminal colors
-for i = 1, 7 do
+local start_index, end_index
+if vim.o.background == 'dark' then
+  start_index, end_index = 1, 7
+else
+  start_index, end_index = 0, 6
+end
+for i = start_index, end_index do
   local bg = api.nvim_get_hl(0, { name = 'Normal' }).bg
   local fg = vim.g['terminal_color_' .. i]
   test(string.format('contrast of vim.g.terminal_color_%s should be >= Lc 60', i), function()
