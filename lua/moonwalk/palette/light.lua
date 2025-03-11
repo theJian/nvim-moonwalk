@@ -42,7 +42,7 @@ M.default = {
   bg = {
     normal = '#e4e2e0',
     popup = '#d8d8da',
-    popup_line = '#efefdc',
+    popup_line = '#ffebd1',
     current_line = '#f2ede9',
     visual30 = '#b8d2e5',
     search30 = '#ffcf24',
@@ -57,7 +57,7 @@ M.lualine = {
   block_normal = { fg = M.default.fg.normal, bg = M.default.bg.normal },
   block_soft = { fg = M.default.fg.soft, bg = 'NONE' },
   block_black = { fg = '#ffffff', bg = '#000000' },
-  block_beige = { fg = M.default.fg.blue_bold, bg = '#ffebd1' },
+  block_beige = { fg = M.default.fg.blue_bold, bg = M.default.bg.popup_line },
   block_blue = { fg = '#ffffff', bg = M.default.fg.blue },
   block_cyan = { fg = '#ffffff', bg = M.default.fg.cyan },
   block_red = { fg = '#ffffff', bg = M.default.fg.red },
