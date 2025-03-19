@@ -43,7 +43,7 @@ local function treesitter(opts, c)
     ['@method'] = { link = 'Function' }, -- method definitions
     ['@method.call'] = { fg = c.fg.blue_bold }, -- method calls
 
-    ['@constructor'] = { fg = c.fg.purple_bold }, -- constructor calls and definitions
+    ['@constructor'] = { fg = c.fg.purple_bold, nocombine = true }, -- constructor calls and definitions
     ['@parameter'] = { fg = c.fg.blue_bold }, -- parameters of a function
 
     -- keywords
