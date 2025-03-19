@@ -30,7 +30,7 @@ local function treesitter(opts, c)
     ['@lsp.type.type'] = { link = 'Type' },
     ['@lsp.type.typeParameter'] = { link = 'TypeDef' },
     ['@lsp.type.variable'] = { link = 'Identifier' },
-    ['@lsp.typemod.class.declaration'] = { fg = c.fg.purple_bold, bold = true },
+    ['@lsp.typemod.class.declaration'] = { fg = c.fg.purple_bold, bold = true, nocombine = true },
     ['@lsp.mod.deprecated'] = { strikethrough = true },
 
     LspInfoTitle = { fg = c.fg.soft, italic = true },
