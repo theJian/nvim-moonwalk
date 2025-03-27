@@ -23,10 +23,10 @@ M.default = {
     red45 = '#ef0b17',
     red30 = '#d1847e',
 
-    gold = '#7f4806',
-    gold_bold = '#504300',
+    gold = '#705700',
+    gold_bold = '#612d00',
     gold45 = '#bd6500',
-    gold30 = '#be9260',
+    gold30 = '#c29540',
 
     green = '#3f5515',
     green_bold = '#174A24',
