@@ -48,7 +48,7 @@ local function treesitter(opts, c)
 
     -- keywords
     ['@keyword'] = { link = 'Keyword' }, -- various keywords
-    ['@keyword.coroutine'] = { fg = c.fg.green_bold, italic = true }, -- keywords related to coroutines (e.g. `go` in Go, `async/await` in Python)
+    ['@keyword.coroutine'] = { fg = c.fg.cyan_bold, italic = true }, -- keywords related to coroutines (e.g. `go` in Go, `async/await` in Python)
     ['@keyword.function'] = { fg = c.fg.soft }, -- keywords that define a function (e.g. `func` in Go, `def` in Python)
     ['@keyword.operator'] = { fg = c.fg.bold, italic = true }, -- operators that are English words (e.g. `and` / `or`)
     ['@keyword.return'] = { fg = c.fg.purple, bold = true }, -- keywords like `return` and `yield`
@@ -65,8 +65,9 @@ local function treesitter(opts, c)
     -- types
     ['@type'] = { link = 'Type' }, -- type or class definitions and annotations
     ['@type.builtin'] = { fg = c.fg.gold_bold, italic = true }, -- built-in types
-    ['@type.definition'] = { fg = c.fg.cyan }, -- identifiers in type definitions (e.g. `typedef <type> <identifier>` in C)
+    ['@type.definition'] = { fg = c.fg.green_bold }, -- identifiers in type definitions (e.g. `typedef <type> <identifier>` in C)
     ['@type.qualifier'] = { fg = c.fg.normal, italic = true }, -- type qualifiers (e.g. `const`)
+    ['@type.javascript'] = { fg = c.fg.gold },
 
     ['@storageclass'] = { link = 'StorageClass' }, -- modifiers that affect storage in memory or life-time
     ['@attribute'] = { fg = c.fg.cyan }, -- attribute annotations (e.g. Python decorators)
@@ -109,8 +110,8 @@ local function treesitter(opts, c)
     ['@text.diff.delete'] = { link = 'DiffDelete' }, -- deleted text (for diff files)
 
     -- tags
-    ['@tag'] = { fg = c.fg.purple, bold = true }, -- XML tag names
-    ['@tag.attribute'] = { fg = c.fg.blue }, -- XML tag attributes
+    ['@tag'] = { fg = c.fg.green_bold, bold = true }, -- XML tag names
+    ['@tag.attribute'] = { fg = c.fg.cyan }, -- XML tag attributes
     ['@tag.delimiter'] = { fg = c.fg.soft }, -- XML tag delimiters
 
     -- conceal
