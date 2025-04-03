@@ -31,7 +31,7 @@ __Screenshots__
 ## 📦 Installation
 Install via your preferred package manager then enable the theme.
 ```lua
-vim.o.background = 'light'
+vim.o.background = 'light' -- or set to 'dark' for the experimental dark theme
 vim.cmd.colorscheme'moonwalk'
 ```
 
