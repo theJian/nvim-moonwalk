@@ -16,7 +16,8 @@ Built for developers who value both aesthetics and eye comfort, this theme maint
 
 __Screenshots__
 
-> TBD
+<img width="547" alt="Screenshot 2025-04-04 at 1 40 58 PM" src="https://github.com/user-attachments/assets/c882eac3-c45b-4f3b-acee-8eae97875087" />
+
 
 
 ## ✨ Features
