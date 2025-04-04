@@ -23,7 +23,7 @@ local function treesitter(opts, c)
     -- literals
     ['@string'] = { link = 'String' }, -- string literals
     ['@string.documentation'] = { link = 'SpecialComment' }, -- string documenting code (e.g. Python docstrings)
-    ['@string.regex'] = { fg = c.fg.purple }, -- regular expressions
+    ['@string.regex'] = { fg = c.fg.gold_bold }, -- regular expressions
     ['@string.escape'] = { fg = c.fg.red_bold }, -- escape sequences
     ['@string.special'] = { link = 'SpecialChar' }, -- other special strings (e.g. dates)
 
@@ -43,15 +43,21 @@ local function treesitter(opts, c)
     ['@method'] = { link = 'Function' }, -- method definitions
     ['@method.call'] = { fg = c.fg.blue_bold }, -- method calls
 
-    ['@constructor'] = { fg = c.fg.purple_bold, nocombine = true }, -- constructor calls and definitions
+    ['@constructor'] = { fg = c.fg.bold, nocombine = true }, -- constructor calls and definitions
     ['@parameter'] = { fg = c.fg.blue_bold }, -- parameters of a function
 
     -- keywords
     ['@keyword'] = { link = 'Keyword' }, -- various keywords
-    ['@keyword.coroutine'] = { fg = c.fg.cyan_bold, italic = true }, -- keywords related to coroutines (e.g. `go` in Go, `async/await` in Python)
-    ['@keyword.function'] = { fg = c.fg.soft }, -- keywords that define a function (e.g. `func` in Go, `def` in Python)
-    ['@keyword.operator'] = { fg = c.fg.bold, italic = true }, -- operators that are English words (e.g. `and` / `or`)
-    ['@keyword.return'] = { fg = c.fg.purple, bold = true }, -- keywords like `return` and `yield`
+    ['@keyword.coroutine'] = { fg = c.fg.cyan, italic = true }, -- keywords related to coroutines (e.g. `go` in Go, `async/await` in Python)
+    ['@keyword.function'] = { fg = c.fg.cyan }, -- keywords that define a function (e.g. `func` in Go, `def` in Python)
+    ['@keyword.operator'] = { fg = c.fg.gold }, -- operators that are English words (e.g. `and` / `or`)
+    ['@keyword.return'] = { fg = c.fg.gold }, -- keywords like `return` and `yield`
+    ['@keyword.conditional'] = { link = 'Conditional' },
+    ['@keyword.exception'] = { fg = c.fg.red },
+    ['@keyword.repeat'] = { link = 'Repeat' },
+    ['@keyword.type'] = { fg = c.fg.purple_bold },
+    ['@keyword.import'] = { fg = c.fg.cyan_bold }, -- keywords related to imports (e.g. `import` / `from` in Python)
+    ['@keyword.export'] = { fg = c.fg.cyan_bold }, -- keywords related to exports (e.g. `export` in JavaScript)
 
     ['@conditional'] = { link = 'Conditional' }, -- keywords related to conditionals (e.g. `if` / `else`)
     ['@conditional.ternary'] = { link = 'Conditional' }, -- ternary operator (e.g. `?` / `:`)
@@ -64,13 +70,13 @@ local function treesitter(opts, c)
 
     -- types
     ['@type'] = { link = 'Type' }, -- type or class definitions and annotations
-    ['@type.builtin'] = { fg = c.fg.gold_bold, italic = true }, -- built-in types
+    ['@type.builtin'] = { fg = c.fg.purple_bold, italic = true }, -- built-in types
     ['@type.definition'] = { fg = c.fg.green_bold }, -- identifiers in type definitions (e.g. `typedef <type> <identifier>` in C)
-    ['@type.qualifier'] = { fg = c.fg.normal, italic = true }, -- type qualifiers (e.g. `const`)
-    ['@type.javascript'] = { fg = c.fg.gold },
+    ['@type.qualifier'] = { fg = c.fg.purple_bold }, -- type qualifiers (e.g. `const`)
+    ['@type.javascript'] = { fg = c.fg.purple_bold },
 
     ['@storageclass'] = { link = 'StorageClass' }, -- modifiers that affect storage in memory or life-time
-    ['@attribute'] = { fg = c.fg.cyan }, -- attribute annotations (e.g. Python decorators)
+    ['@attribute'] = { fg = c.fg.red_bold }, -- attribute annotations (e.g. Python decorators)
     ['@field'] = { fg = c.fg.bold }, -- object and struct fields
     ['@property'] = { fg = c.fg.bold }, -- similar to `@field`
 
@@ -82,8 +88,9 @@ local function treesitter(opts, c)
     ['@constant.builtin'] = { fg = c.fg.gold_bold, italic = true }, -- built-in constant values
     ['@constant.macro'] = { fg = c.fg.red_bold, bold = true }, -- constants defined by the preprocessor
 
-    ['@namespace'] = { fg = c.fg.purple_bold }, -- modules or namespaces
-    ['@symbol'] = { fg = c.fg.gold }, -- symbols or atoms
+    ['@module'] = { fg = c.fg.purple  }, -- modules or packages
+    ['@namespace'] = { fg = c.fg.purple }, -- modules or namespaces
+    ['@symbol'] = { fg = c.fg.gold_bold }, -- symbols or atoms
 
     -- text
     ['@text'] = { fg = c.fg.normal }, -- non-structured text
@@ -111,12 +118,12 @@ local function treesitter(opts, c)
 
     -- tags
     ['@tag'] = { fg = c.fg.green_bold, bold = true }, -- XML tag names
-    ['@tag.attribute'] = { fg = c.fg.cyan }, -- XML tag attributes
+    ['@tag.attribute'] = { fg = c.fg.normal }, -- XML tag attributes
     ['@tag.delimiter'] = { fg = c.fg.soft }, -- XML tag delimiters
 
     -- conceal
     ['@conceal'] = { link = 'Conceal' }, -- for captures that are only used for concealing
-    ['@conceal.json'] = { link = 'Conceal' }, -- for captures that are only used for concealing
+    ['@conceal.json'] = { fg = c.fg.soft }, -- for captures that are only used for concealing
 
     -- markup
     ['@markup.heading'] = { fg = c.fg.purple_bold, bold = true },
