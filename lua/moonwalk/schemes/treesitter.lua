@@ -88,7 +88,7 @@ local function treesitter(opts, c)
     ['@constant.builtin'] = { fg = c.fg.gold_bold, italic = true }, -- built-in constant values
     ['@constant.macro'] = { fg = c.fg.red_bold, bold = true }, -- constants defined by the preprocessor
 
-    ['@module'] = { fg = c.fg.purple  }, -- modules or packages
+    ['@module'] = { fg = c.fg.purple }, -- modules or packages
     ['@namespace'] = { fg = c.fg.purple }, -- modules or namespaces
     ['@symbol'] = { fg = c.fg.gold_bold }, -- symbols or atoms
 
