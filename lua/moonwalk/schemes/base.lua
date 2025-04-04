@@ -65,7 +65,7 @@ local function base(opts, c)
     LineNr = { link = 'NonText' },
 
     WinSeparator = {
-      fg = c.fg.soft,
+      fg = c.fg.soft30,
       bg = opts.transparent and 'NONE' or c.bg.normal,
       bold = false,
     },
