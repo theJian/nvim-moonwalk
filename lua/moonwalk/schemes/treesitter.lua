@@ -23,7 +23,7 @@ local function treesitter(opts, c)
     -- literals
     ['@string'] = { link = 'String' }, -- string literals
     ['@string.documentation'] = { link = 'SpecialComment' }, -- string documenting code (e.g. Python docstrings)
-    ['@string.regex'] = { fg = c.fg.green }, -- regular expressions
+    ['@string.regexp'] = { fg = c.fg.green }, -- regular expressions
     ['@string.escape'] = { fg = c.fg.red_bold }, -- escape sequences
     ['@string.special'] = { link = 'SpecialChar' }, -- other special strings (e.g. dates)
 
@@ -36,12 +36,12 @@ local function treesitter(opts, c)
 
     -- functions
     ['@function'] = { link = 'Function' }, -- function definitions
-    ['@function.builtin'] = { fg = c.fg.blue_bold, italic = true }, -- built-in functions
+    ['@function.builtin'] = { fg = c.fg.normal }, -- built-in functions
     ['@function.call'] = { fg = c.fg.blue_bold }, -- function calls
     ['@function.macro'] = { link = 'Macro' }, -- preprocessor macros
 
-    ['@method'] = { link = 'Function' }, -- method definitions
-    ['@method.call'] = { fg = c.fg.blue_bold }, -- method calls
+    ['@function.method'] = { link = 'Function' }, -- method definitions
+    ['@function.method.call'] = { fg = c.fg.normal }, -- method calls
 
     ['@constructor'] = { fg = c.fg.bold, nocombine = true }, -- constructor calls and definitions
     ['@parameter'] = { fg = c.fg.blue_bold }, -- parameters of a function
@@ -49,15 +49,16 @@ local function treesitter(opts, c)
     -- keywords
     ['@keyword'] = { link = 'Keyword' }, -- various keywords
     ['@keyword.coroutine'] = { fg = c.fg.cyan, italic = true }, -- keywords related to coroutines (e.g. `go` in Go, `async/await` in Python)
-    ['@keyword.function'] = { fg = c.fg.cyan }, -- keywords that define a function (e.g. `func` in Go, `def` in Python)
+    ['@keyword.function'] = { fg = c.fg.normal }, -- keywords that define a function (e.g. `func` in Go, `def` in Python)
     ['@keyword.operator'] = { fg = c.fg.purple }, -- operators that are English words (e.g. `and` / `or`)
     ['@keyword.return'] = { fg = c.fg.purple }, -- keywords like `return` and `yield`
     ['@keyword.conditional'] = { link = 'Conditional' },
     ['@keyword.exception'] = { fg = c.fg.red },
+    ['@keyword.debug'] = { fg = c.fg.red },
     ['@keyword.repeat'] = { link = 'Repeat' },
-    ['@keyword.type'] = { fg = c.fg.purple_bold },
+    ['@keyword.type'] = { fg = c.fg.normal },
+    ['@keyword.modifier'] = { fg = c.fg.cyan },
     ['@keyword.import'] = { fg = c.fg.cyan_bold }, -- keywords related to imports (e.g. `import` / `from` in Python)
-    ['@keyword.export'] = { fg = c.fg.cyan_bold }, -- keywords related to exports (e.g. `export` in JavaScript)
 
     ['@conditional'] = { link = 'Conditional' }, -- keywords related to conditionals (e.g. `if` / `else`)
     ['@conditional.ternary'] = { link = 'Conditional' }, -- ternary operator (e.g. `?` / `:`)
@@ -70,26 +71,28 @@ local function treesitter(opts, c)
 
     -- types
     ['@type'] = { link = 'Type' }, -- type or class definitions and annotations
-    ['@type.builtin'] = { fg = c.fg.gold, italic = true }, -- built-in types
+    ['@type.builtin'] = { fg = c.fg.soft, italic = true }, -- built-in types
     ['@type.definition'] = { fg = c.fg.blue_bold }, -- identifiers in type definitions (e.g. `typedef <type> <identifier>` in C)
     ['@type.qualifier'] = { fg = c.fg.cyan }, -- type qualifiers (e.g. `const`)
     ['@type.javascript'] = { fg = c.fg.gold },
 
     ['@storageclass'] = { link = 'StorageClass' }, -- modifiers that affect storage in memory or life-time
-    ['@attribute'] = { fg = c.fg.green_bold }, -- attribute annotations (e.g. Python decorators)
+    ['@attribute'] = { fg = c.fg.soft, italic = true }, -- attribute annotations (e.g. Python decorators)
+    ['@attribute.builtin'] = { fg = c.fg.soft, italic = true },
     ['@field'] = { fg = c.fg.bold }, -- object and struct fields
     ['@property'] = { fg = c.fg.bold }, -- similar to `@field`
 
     -- identifiers
     ['@variable'] = { link = 'Identifier' }, -- various variable names
-    ['@variable.builtin'] = { fg = c.fg.blue_bold, italic = true }, -- built-in variable names (e.g. `this`)
+    ['@variable.builtin'] = { fg = c.fg.red_bold }, -- built-in variable names (e.g. `this`)
+    ['@variable.member'] = { fg = c.fg.normal },
 
     ['@constant'] = { link = 'Constant' }, -- constant identifiers
-    ['@constant.builtin'] = { fg = c.fg.gold_bold, italic = true }, -- built-in constant values
+    ['@constant.builtin'] = { fg = c.fg.gold_bold }, -- built-in constant values
     ['@constant.macro'] = { fg = c.fg.red_bold, bold = true }, -- constants defined by the preprocessor
 
-    ['@module'] = { fg = c.fg.purple }, -- modules or packages
-    ['@namespace'] = { fg = c.fg.purple }, -- modules or namespaces
+    ['@module'] = { fg = c.fg.purple_bold }, -- modules or packages
+    ['@namespace'] = { fg = c.fg.purple_bold }, -- modules or namespaces
     ['@symbol'] = { fg = c.fg.gold_bold }, -- symbols or atoms
 
     -- text

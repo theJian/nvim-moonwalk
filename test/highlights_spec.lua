@@ -236,9 +236,6 @@ do
       if color1 ~= color2 then
         local deltaE = calc_deltaE(color1, color2)
         local desired_deltaE = 5
-        if extract_prefix(keys[i]) == extract_prefix(keys[j]) then
-          desired_deltaE = 3.5
-        end
         test(
           string.format('fg.%s and fg.%s should be easily distinguishable(ΔE>=%.2f)', keys[i], keys[j], desired_deltaE),
           function()

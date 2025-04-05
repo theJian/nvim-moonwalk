@@ -17,7 +17,7 @@ local function syntax(opts, c)
     Repeat = { fg = c.fg.purple },
     Label = { fg = c.fg.purple_bold },
     Operator = { fg = c.fg.normal },
-    Keyword = { fg = c.fg.bold },
+    Keyword = { fg = c.fg.normal },
     Exception = { fg = c.fg.red },
 
     PreProc = { fg = c.fg.cyan_bold, italic = true },
@@ -27,9 +27,9 @@ local function syntax(opts, c)
     PreCondit = { fg = c.fg.green_bold },
 
     Type = { fg = c.fg.gold, italic = true },
-    StorageClass = { fg = c.fg.gold },
-    Structure = { fg = c.fg.gold },
-    Typedef = { fg = c.fg.cyan },
+    StorageClass = { fg = c.fg.cyan },
+    Structure = { fg = c.fg.normal },
+    Typedef = { fg = c.fg.normal },
 
     Special = { fg = c.fg.red_bold },
     SpecialChar = { fg = c.fg.red_bold },
