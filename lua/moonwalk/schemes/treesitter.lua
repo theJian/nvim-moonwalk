@@ -23,7 +23,7 @@ local function treesitter(opts, c)
     -- literals
     ['@string'] = { link = 'String' }, -- string literals
     ['@string.documentation'] = { link = 'SpecialComment' }, -- string documenting code (e.g. Python docstrings)
-    ['@string.regex'] = { fg = c.fg.gold_bold }, -- regular expressions
+    ['@string.regex'] = { fg = c.fg.green }, -- regular expressions
     ['@string.escape'] = { fg = c.fg.red_bold }, -- escape sequences
     ['@string.special'] = { link = 'SpecialChar' }, -- other special strings (e.g. dates)
 
@@ -50,8 +50,8 @@ local function treesitter(opts, c)
     ['@keyword'] = { link = 'Keyword' }, -- various keywords
     ['@keyword.coroutine'] = { fg = c.fg.cyan, italic = true }, -- keywords related to coroutines (e.g. `go` in Go, `async/await` in Python)
     ['@keyword.function'] = { fg = c.fg.cyan }, -- keywords that define a function (e.g. `func` in Go, `def` in Python)
-    ['@keyword.operator'] = { fg = c.fg.gold }, -- operators that are English words (e.g. `and` / `or`)
-    ['@keyword.return'] = { fg = c.fg.gold }, -- keywords like `return` and `yield`
+    ['@keyword.operator'] = { fg = c.fg.purple }, -- operators that are English words (e.g. `and` / `or`)
+    ['@keyword.return'] = { fg = c.fg.purple }, -- keywords like `return` and `yield`
     ['@keyword.conditional'] = { link = 'Conditional' },
     ['@keyword.exception'] = { fg = c.fg.red },
     ['@keyword.repeat'] = { link = 'Repeat' },
@@ -70,13 +70,13 @@ local function treesitter(opts, c)
 
     -- types
     ['@type'] = { link = 'Type' }, -- type or class definitions and annotations
-    ['@type.builtin'] = { fg = c.fg.purple_bold, italic = true }, -- built-in types
-    ['@type.definition'] = { fg = c.fg.green_bold }, -- identifiers in type definitions (e.g. `typedef <type> <identifier>` in C)
-    ['@type.qualifier'] = { fg = c.fg.purple_bold }, -- type qualifiers (e.g. `const`)
-    ['@type.javascript'] = { fg = c.fg.purple_bold },
+    ['@type.builtin'] = { fg = c.fg.gold, italic = true }, -- built-in types
+    ['@type.definition'] = { fg = c.fg.blue_bold }, -- identifiers in type definitions (e.g. `typedef <type> <identifier>` in C)
+    ['@type.qualifier'] = { fg = c.fg.cyan }, -- type qualifiers (e.g. `const`)
+    ['@type.javascript'] = { fg = c.fg.gold },
 
     ['@storageclass'] = { link = 'StorageClass' }, -- modifiers that affect storage in memory or life-time
-    ['@attribute'] = { fg = c.fg.red_bold }, -- attribute annotations (e.g. Python decorators)
+    ['@attribute'] = { fg = c.fg.green_bold }, -- attribute annotations (e.g. Python decorators)
     ['@field'] = { fg = c.fg.bold }, -- object and struct fields
     ['@property'] = { fg = c.fg.bold }, -- similar to `@field`
 

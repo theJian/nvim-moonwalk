@@ -24,7 +24,7 @@ M.default = {
     red30 = '#d1847e',
 
     gold = '#705700',
-    gold_bold = '#612d00',
+    gold_bold = '#782400',
     gold45 = '#bd6500',
     gold30 = '#c29540',
 
