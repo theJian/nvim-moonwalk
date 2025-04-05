@@ -41,7 +41,7 @@ M.default = {
 
   bg = {
     normal = '#e4e2e0',
-    popup = '#d8d8da',
+    popup = '#dcd8d0',
     popup_line = '#ffebd1',
     current_line = '#f2ede9',
     visual30 = '#b8d2e5',
