@@ -3,7 +3,7 @@ local M = {}
 M.default = {
   fg = {
     normal = '#061f4a',
-    bold = '#212121',
+    bold = '#080808',
     soft = '#494440',
     soft45 = '#7d7e82',
     soft30 = '#9c958d',
@@ -13,7 +13,7 @@ M.default = {
     blue45 = '#0087a6',
     blue30 = '#8695c1',
 
-    cyan = '#20655a',
+    cyan = '#006442',
     cyan_bold = '#004347',
     cyan45 = '#00878a',
     cyan30 = '#60a7a9',
@@ -24,11 +24,11 @@ M.default = {
     red30 = '#d1847e',
 
     gold = '#705700',
-    gold_bold = '#782400',
+    gold_bold = '#644117',
     gold45 = '#bd6500',
     gold30 = '#c29540',
 
-    green = '#3f5515',
+    green = '#4c6129',
     green_bold = '#174A24',
     green45 = '#028d19',
     green30 = '#75a36c',
