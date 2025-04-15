@@ -26,7 +26,7 @@ local function syntax(opts, c)
     Macro = { fg = c.fg.red_bold },
     PreCondit = { fg = c.fg.green_bold },
 
-    Type = { fg = c.fg.gold, italic = true },
+    Type = { fg = c.fg.gold },
     StorageClass = { fg = c.fg.cyan },
     Structure = { fg = c.fg.normal },
     Typedef = { fg = c.fg.normal },
