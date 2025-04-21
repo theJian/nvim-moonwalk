@@ -28,7 +28,7 @@ magenta = '#5400a8'
 red = '#7a0047'
 tabs = "#dcd8d0"
 white = '#9c958d'
-yellow = '#644117'
+yellow = '#733a11'
 
 # Dim colors
 dim-black = '#7d7e82'
@@ -50,4 +50,4 @@ light-green = '#4c6129'
 light-magenta = '#952197'
 light-red = '#af1608'
 light-white = '#FFFFFF'
-light-yellow = '#705700'
+light-yellow = '#a33000'
