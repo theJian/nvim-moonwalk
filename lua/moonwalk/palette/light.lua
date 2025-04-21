@@ -88,7 +88,7 @@ M.term = {
   bright_cyan = M.default.fg.cyan,
 
   white = M.default.fg.soft30,
-  bright_white = M.default.bg.popup_line,
+  bright_white = '#ffffff',
 }
 
 return M

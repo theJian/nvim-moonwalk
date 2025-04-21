@@ -1,22 +1,22 @@
 [colors.bright]
 black =   '#494440'
 red =     '#af1608'
-green =   '#3f5515'
-yellow =  '#7f4806'
+green =   '#4c6129'
+yellow =  '#705700'
 blue =    '#0d50c5'
 magenta = '#952197'
-cyan =    '#20655a'
-white =   '#f7f5f3'
+cyan =    '#006442'
+white =   '#ffffff'
 
 [colors.normal]
-black =   '#061f4a'
+black =   '#080808'
 red =     '#7a0047'
 green =   '#174A24'
-yellow =  '#504300'
+yellow =  '#644117'
 blue =    '#002fa7'
 magenta = '#5400a8'
 cyan =    '#004347'
-white =   '#e4e2e0'
+white =   '#9c958d'
 
 [colors.primary]
 background = '#e4e2e0'
