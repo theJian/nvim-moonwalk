@@ -16,8 +16,22 @@ Built for developers who value both aesthetics and eye comfort, this theme maint
 
 __Screenshots__
 
-<img width="547" alt="Screenshot 2025-04-04 at 1 40 58 PM" src="https://github.com/user-attachments/assets/c882eac3-c45b-4f3b-acee-8eae97875087" />
+<details>
+<summary>Python</summary>
+<img width="619" alt="Screenshot 2025-05-04 at 17 21 12" src="https://github.com/user-attachments/assets/6a5fb016-8cfb-455a-a9c5-7562e7e0ce4e" />
+</details>
 
+<details>
+<summary>JavaScript</summary>
+<img width="619" alt="Screenshot 2025-05-04 at 17 20 47" src="https://github.com/user-attachments/assets/e0981278-95d3-4e4b-8e57-6ffa805db234" />
+
+</details>
+
+<details>
+<summary>Rust</summary>
+<img width="619" alt="Screenshot 2025-05-04 at 17 21 30" src="https://github.com/user-attachments/assets/3af060e3-c9a2-4b97-8135-ed0f6581876a" />
+
+</details>
 
 
 ## ✨ Features
