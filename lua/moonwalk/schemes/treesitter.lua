@@ -4,7 +4,7 @@ local function treesitter(opts, c)
 
     -- misc
     ['@comment'] = { link = 'Comment' }, -- line and block comments
-    ['@comment.documentation'] = { link = 'SpecialComment' }, -- comments documenting code
+    ['@comment.documentation'] = { link = 'Comment' }, -- comments documenting code
     ['@comment.error'] = { fg = c.fg.soft45, sp = c.fg.red45, italic = true, underline = true }, -- error-type comments (e.g. `ERROR`, `FIXME`, `DEPRECATED`)
     ['@comment.warning'] = { fg = c.fg.soft45, italic = true, underline = true, sp = c.fg.gold45 }, -- warning-type comments (e.g. `WARNING`, `FIX`, `HACK`)
     ['@comment.todo'] = { fg = c.fg.soft45, italic = true, underline = true, sp = c.fg.green45 }, -- todo-type comments (e.g. `TODO`, `WIP`)
