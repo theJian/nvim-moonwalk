@@ -9,7 +9,7 @@ local function treesitter(opts, c)
     LspCodeLens = { fg = c.fg.soft30 },
     LspCodeLensSeparator = { fg = c.fg.soft30 },
 
-    LspSignatureActiveParameter = { fg = c.fg.blue45 },
+    LspSignatureActiveParameter = { bg = c.bg.popup_line },
     LspInlayHint = { fg = c.fg.soft30, italic = true },
     SnippetTabstop = { link = 'Visual' },
 
