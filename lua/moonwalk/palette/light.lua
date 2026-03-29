@@ -13,8 +13,8 @@ M.default = {
     blue45 = '#0087a6',
     blue30 = '#8695c1',
 
-    cyan = '#006442',
-    cyan_bold = '#004347',
+    cyan = '#005580',
+    cyan_bold = '#00566b',
     cyan45 = '#00878a',
     cyan30 = '#60a7a9',
 
@@ -29,7 +29,7 @@ M.default = {
     gold30 = '#c29540',
 
     green = '#4c6129',
-    green_bold = '#174A24',
+    green_bold = '#145b0e',
     green45 = '#028d19',
     green30 = '#75a36c',
 
