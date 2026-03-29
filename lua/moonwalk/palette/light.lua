@@ -13,7 +13,7 @@ M.default = {
     blue45 = '#0087a6',
     blue30 = '#8695c1',
 
-    cyan = '#005580',
+    cyan = '#006092',
     cyan_bold = '#00566b',
     cyan45 = '#00878a',
     cyan30 = '#60a7a9',
