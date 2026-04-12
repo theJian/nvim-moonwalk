@@ -241,7 +241,13 @@ do
       if color1 ~= color2 then
         local deltaE = calc_deltaE(color1, color2)
         local same_family = extract_prefix(keys[i]) == extract_prefix(keys[j])
-        local desired_deltaE = not has_number(keys[i]) and not has_number(keys[j]) and not same_family and not neutrals[keys[i]] and not neutrals[keys[j]] and 10 or 5
+        local desired_deltaE = not has_number(keys[i])
+            and not has_number(keys[j])
+            and not same_family
+            and not neutrals[keys[i]]
+            and not neutrals[keys[j]]
+            and 10
+          or 5
         test(
           string.format('fg.%s and fg.%s should be easily distinguishable(ΔE>=%.2f)', keys[i], keys[j], desired_deltaE),
           function()
