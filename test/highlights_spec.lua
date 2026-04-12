@@ -220,14 +220,19 @@ for _, name in pairs(CONTENT_TEXT) do
   end
 end
 
-local function extract_prefix(str)
-  local prefix = string.match(str, '^(%a+)')
-  return prefix
-end
-
 do
   local colors = get_colors(nil, 'default').fg
   local keys = vim.tbl_keys(colors)
+
+  local function has_number(name)
+    return string.match(name, '%d+') ~= nil
+  end
+
+  local function extract_prefix(str)
+    return string.match(str, '^(%a+)')
+  end
+
+  local neutrals = { normal = true, bold = true, soft = true }
 
   for i = 1, #keys do
     for j = i + 1, #keys do
@@ -235,7 +240,8 @@ do
       local color2 = colors[keys[j]]
       if color1 ~= color2 then
         local deltaE = calc_deltaE(color1, color2)
-        local desired_deltaE = 5
+        local same_family = extract_prefix(keys[i]) == extract_prefix(keys[j])
+        local desired_deltaE = not has_number(keys[i]) and not has_number(keys[j]) and not same_family and not neutrals[keys[i]] and not neutrals[keys[j]] and 10 or 5
         test(
           string.format('fg.%s and fg.%s should be easily distinguishable(ΔE>=%.2f)', keys[i], keys[j], desired_deltaE),
           function()

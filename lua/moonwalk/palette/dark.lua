@@ -34,7 +34,7 @@ M.default = {
     green30 = '#528e43',
 
     purple = '#e49ff5',
-    purple_bold = '#e8d1ff',
+    purple_bold = '#d3a8e7',
     purple45 = '#c086e0',
     purple30 = '#b36bb3',
   },
