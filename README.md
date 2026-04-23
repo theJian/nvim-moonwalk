@@ -40,7 +40,7 @@ __Screenshots__
 - Treesitter, lsp, and diagnostic highlights
 - Terminal color
 - Lualine support
-- Extra configurations for other applications
+- [Extra configurations](https://github.com/mbadolato/iTerm2-Color-Schemes#moonwalk) for other applications
 
 
 ## 📦 Installation
