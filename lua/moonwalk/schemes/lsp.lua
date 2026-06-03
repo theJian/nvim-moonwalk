@@ -11,7 +11,8 @@ local function treesitter(opts, c)
 
     LspSignatureActiveParameter = { bg = c.bg.popup_line },
     LspInlayHint = { fg = c.fg.soft30, italic = true },
-    SnippetTabstop = { link = 'Visual' },
+    SnippetTabstop = { sp = c.fg.soft45, bg = c.bg.popup, underline = true, italic = true },
+    SnippetTabstopActive = { sp = c.fg.bold, underline = true },
 
     -- Semantic Highlights
     ['@lsp.type.class'] = { link = 'Structure' },
