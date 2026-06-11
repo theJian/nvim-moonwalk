@@ -1,10 +1,10 @@
 function diagnostic(opts, c)
   return {
-    DiagnosticError = { fg = c.fg.red30 },
-    DiagnosticWarn = { fg = c.fg.gold30 },
-    DiagnosticInfo = { fg = c.fg.soft30 },
-    DiagnosticHint = { fg = c.fg.cyan30 },
-    DiagnosticOk = { fg = c.fg.green30 },
+    DiagnosticError = { fg = c.fg.red45 },
+    DiagnosticWarn = { fg = c.fg.gold45 },
+    DiagnosticInfo = { fg = c.fg.blue45 },
+    DiagnosticHint = { fg = c.fg.cyan45 },
+    DiagnosticOk = { fg = c.fg.green45 },
     DiagnosticUnderlineError = { sp = c.fg.red45, undercurl = true },
     DiagnosticUnderlineWarn = { sp = c.fg.gold30, undercurl = true },
     DiagnosticUnderlineInfo = { sp = c.fg.soft45, undercurl = true },
