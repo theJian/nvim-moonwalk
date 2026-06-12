@@ -4,6 +4,7 @@ local function treesitter(opts, c)
     LspReferenceText = { underdashed = true, sp = c.fg.green },
     LspReferenceRead = { sp = c.fg.blue45, underdotted = true },
     LspReferenceWrite = { sp = c.fg.purple45, underdotted = true },
+    LspReferenceTarget = { sp = c.fg.green_bold, underline = true },
 
     -- Codelens
     LspCodeLens = { fg = c.fg.soft30 },
