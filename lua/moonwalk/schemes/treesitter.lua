@@ -4,10 +4,10 @@ local function treesitter(opts, c)
 
     -- misc
     ['@comment'] = { link = 'Comment' }, -- line and block comments
-    ['@comment.documentation'] = { link = 'Comment' }, -- comments documenting code
+    ['@comment.documentation'] = { link = 'SpecialComment' }, -- comments documenting code
     ['@comment.error'] = { fg = c.fg.soft45, sp = c.fg.red45, italic = true, underline = true }, -- error-type comments (e.g. `ERROR`, `FIXME`, `DEPRECATED`)
     ['@comment.warning'] = { fg = c.fg.soft45, italic = true, underline = true, sp = c.fg.gold45 }, -- warning-type comments (e.g. `WARNING`, `FIX`, `HACK`)
-    ['@comment.todo'] = { fg = c.fg.soft45, italic = true, underline = true, sp = c.fg.green45 }, -- todo-type comments (e.g. `TODO`, `WIP`)
+    ['@comment.todo'] = { link = 'Todo' }, -- todo-type comments (e.g. `TODO`, `WIP`)
     ['@comment.note'] = { fg = c.fg.soft45, italic = true, underline = true, sp = c.fg.cyan45 }, -- note-type comments (e.g. `NOTE`, `INFO`, `XXX`)
     ['@error'] = { sp = c.fg.red, undercurl = true }, -- syntax/parser errors
     ['@none'] = { link = 'Normal' }, -- completely disable the highlight
@@ -89,7 +89,7 @@ local function treesitter(opts, c)
 
     ['@constant'] = { link = 'Constant' }, -- constant identifiers
     ['@constant.builtin'] = { fg = c.fg.gold_bold }, -- built-in constant values
-    ['@constant.macro'] = { fg = c.fg.red_bold, bold = true }, -- constants defined by the preprocessor
+    ['@constant.macro'] = { fg = c.fg.red_bold }, -- constants defined by the preprocessor
 
     ['@module'] = { fg = c.fg.purple_bold }, -- modules or packages
     ['@namespace'] = { fg = c.fg.purple_bold }, -- modules or namespaces
@@ -120,7 +120,7 @@ local function treesitter(opts, c)
     ['@text.diff.delete'] = { link = 'DiffDelete' }, -- deleted text (for diff files)
 
     -- tags
-    ['@tag'] = { fg = c.fg.green_bold, bold = true }, -- XML tag names
+    ['@tag'] = { fg = c.fg.green_bold }, -- XML tag names
     ['@tag.attribute'] = { fg = c.fg.normal }, -- XML tag attributes
     ['@tag.delimiter'] = { fg = c.fg.soft }, -- XML tag delimiters
 

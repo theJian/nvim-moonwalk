@@ -35,13 +35,13 @@ local function syntax(opts, c)
     SpecialChar = { fg = c.fg.red_bold },
     Tag = { fg = c.fg.green_bold },
     Delimiter = { fg = c.fg.soft },
-    SpecialComment = { fg = c.fg.soft45, bold = true },
+    SpecialComment = { fg = c.fg.soft45, nocombine = true },
     Debug = { fg = c.fg.red, bold = true },
 
     Underlined = { fg = c.fg.red },
     Ignore = { fg = c.fg.soft30 },
     Error = { fg = c.fg.red },
-    Todo = { fg = c.fg.green, bold = true },
+    Todo = { fg = c.fg.soft45, italic = true, underline = true, sp = c.fg.green45 },
   }
 end
 

@@ -38,7 +38,7 @@ local function treesitter(opts, c)
     ['@lsp.mod.defaultLibrary'] = { fg = c.fg.normal, nocombine = true },
     ['@lsp.mod.async'] = { fg = c.fg.cyan, italic = true },
 
-    ['@lsp.typemod.class.declaration'] = { fg = c.fg.purple_bold, bold = true, nocombine = true },
+    ['@lsp.typemod.class.declaration'] = { fg = c.fg.purple_bold, nocombine = true },
 
     LspInfoTitle = { fg = c.fg.soft, italic = true },
   }
