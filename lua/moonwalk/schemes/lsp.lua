@@ -1,5 +1,31 @@
 local function treesitter(opts, c)
   return {
+    -- Native completion kinds
+    LspKindText = { link = '@text' },
+    LspKindMethod = { link = '@function.method' },
+    LspKindFunction = { link = '@function' },
+    LspKindConstructor = { link = '@constructor' },
+    LspKindField = { link = '@field' },
+    LspKindVariable = { link = '@variable' },
+    LspKindClass = { link = '@type' },
+    LspKindInterface = { link = '@type' },
+    LspKindModule = { link = '@module' },
+    LspKindProperty = { link = '@property' },
+    LspKindUnit = { link = '@constant' },
+    LspKindValue = { link = '@constant' },
+    LspKindEnum = { link = '@type' },
+    LspKindKeyword = { link = '@keyword' },
+    LspKindSnippet = { link = '@constant' },
+    LspKindFile = { link = '@text.uri' },
+    LspKindReference = { link = '@type' },
+    LspKindFolder = { link = '@constant' },
+    LspKindEnumMember = { link = '@field' },
+    LspKindConstant = { link = '@constant' },
+    LspKindStruct = { link = '@type' },
+    LspKindEvent = { link = '@type' },
+    LspKindOperator = { link = '@operator' },
+    LspKindTypeParameter = { link = '@type' },
+
     -- Reference Highlights
     LspReferenceText = { underdashed = true, sp = c.fg.green },
     LspReferenceRead = { sp = c.fg.blue45, underdotted = true },
