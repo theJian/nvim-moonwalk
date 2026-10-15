@@ -105,9 +105,9 @@ local function base(opts, c)
     PmenuSbar = { fg = 'NONE', bg = c.bg.popup },
     PmenuThumb = { fg = 'NONE', bg = c.fg.blue, blend = 0 },
     PmenuKind = { fg = c.fg.bold, italic = true },
-    PmenuKindSel = { fg = c.fg.bold, bold = true },
+    PmenuKindSel = { fg = c.fg.bold, bg = c.bg.popup_line or c.bg.popup_line30, italic = true, blend = 0 },
     PmenuExtra = { fg = c.fg.gold45 },
-    PmenuExtraSel = { fg = c.fg.gold45, bold = true },
+    PmenuExtraSel = { fg = c.fg.gold45, bg = c.bg.popup_line or c.bg.popup_line30, bold = true, blend = 0 },
 
     WildMenu = { bg = c.bg.popup },
 
