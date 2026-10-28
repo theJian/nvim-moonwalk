@@ -40,12 +40,8 @@ local function base(opts, c)
     TabLineSel = { fg = c.fg.blue, bg = 'NONE', bold = true, underline = true },
     TabLineFill = { fg = c.fg.soft30, bg = c.bg.normal, underline = true },
 
-    WinBar = { fg = c.fg.blue, underdashed = true },
-    WinBarNC = {
-      fg = c.fg.soft30,
-      bg = 'NONE',
-      underdashed = true,
-    },
+    WinBar = { link = 'StatusLine' },
+    WinBarNC = { link = 'StatusLineNC' },
 
     StatusLine = { fg = c.fg.normal, bg = c.bg.popup },
     StatusLineNC = { fg = c.fg.soft30, bg = 'NONE' },
