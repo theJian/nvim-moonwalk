@@ -109,7 +109,7 @@ local function base(opts, c)
     PmenuExtra = { fg = c.fg.gold45 },
     PmenuExtraSel = { fg = c.fg.gold45, bg = c.bg.popup_line or c.bg.popup_line30, bold = true, blend = 0 },
 
-    WildMenu = { bg = c.bg.popup },
+    WildMenu = { bg = c.bg.popup_line, bold = true },
 
     Search = { bg = c.bg.search30 },
     IncSearch = { bg = c.bg.search30, bold = true },
