@@ -19,21 +19,21 @@ __Screenshots__
 <details>
 <summary>Python</summary>
 
-![Python — light](screenshots/python-light.png)
+<img src="screenshots/python-light.png" alt="Python — light" width="680">
 
 </details>
 
 <details>
 <summary>JavaScript</summary>
 
-![JavaScript — light](screenshots/javascript-light.png)
+<img src="screenshots/javascript-light.png" alt="JavaScript — light" width="680">
 
 </details>
 
 <details>
 <summary>Rust</summary>
 
-![Rust — light](screenshots/rust-light.png)
+<img src="screenshots/rust-light.png" alt="Rust — light" width="680">
 
 </details>
 

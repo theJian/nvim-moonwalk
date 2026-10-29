@@ -10,16 +10,19 @@ import pynvim
 from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parent.parent
-COLS, ROWS = 80, 30
+COLS = 80
+SCALE = 2
+FONT_SIZE = 14
 
 
 def capture(source, output, font):
+    rows = len(source.read_text().splitlines()) + 1
     nvim = pynvim.attach("child", argv=["nvim", "--embed", "--clean", "-n"])
-    grid = [[(" ", 0) for _ in range(COLS)] for _ in range(ROWS)]
+    grid = [[(" ", 0) for _ in range(COLS)] for _ in range(rows)]
     highlights = {0: {}}
     defaults = [0, 0xffffff]
     try:
-        nvim.ui_attach(COLS, ROWS, rgb=True, ext_linegrid=True)
+        nvim.ui_attach(COLS, rows, rgb=True, ext_linegrid=True)
         nvim.options["runtimepath"] = str(ROOT) + "," + nvim.options["runtimepath"]
         nvim.options["background"] = "light"
         nvim.command("colorscheme moonwalk")
@@ -45,7 +48,7 @@ def capture(source, output, font):
                     elif event == "hl_attr_define":
                         highlights[args[0]] = args[1]
                     elif event == "grid_clear":
-                        grid = [[(" ", 0) for _ in range(COLS)] for _ in range(ROWS)]
+                        grid = [[(" ", 0) for _ in range(COLS)] for _ in range(rows)]
                     elif event == "grid_line":
                         _, row, col, cells, *_ = args
                         hl = 0
@@ -57,14 +60,15 @@ def capture(source, output, font):
                                 grid[row][col] = (text, hl)
                                 col += 1
                     elif event == "grid_scroll":
-                        _, top, bottom, left, right, rows, cols = args
+                        _, top, bottom, left, right, scroll_rows, cols = args
                         old = [row[:] for row in grid]
                         for y in range(top, bottom):
                             for x in range(left, right):
-                                grid[y][x] = old[y + rows][x + cols] if top <= y + rows < bottom and left <= x + cols < right else (" ", 0)
-        width = round(font.getlength("M"))
-        height = sum(font.getmetrics()) + 4
-        image = Image.new("RGB", (COLS * width, ROWS * height))
+                                grid[y][x] = old[y + scroll_rows][x + cols] if top <= y + scroll_rows < bottom and left <= x + cols < right else (" ", 0)
+        # Render directly at Retina resolution; never enlarge a rasterized glyph.
+        width = font.getlength("M")
+        height = sum(font.getmetrics()) + 4 * SCALE
+        image = Image.new("RGB", (round(COLS * width), rows * height))
         draw = ImageDraw.Draw(image)
         for y, row in enumerate(grid):
             for x, (text, hl) in enumerate(row):
@@ -74,11 +78,11 @@ def capture(source, output, font):
                     fg, bg = bg, fg
                 box = (x * width, y * height, (x + 1) * width - 1, (y + 1) * height - 1)
                 draw.rectangle(box, fill=f"#{bg:06x}")
-                draw.text((x * width, y * height + 2), text, font=font, fill=f"#{fg:06x}")
+                draw.text((x * width, y * height + 2 * SCALE), text, font=font, fill=f"#{fg:06x}")
                 if attrs.get("underline") or attrs.get("undercurl"):
                     draw.line((box[0], box[3] - 2, box[2], box[3] - 2), fill=f"#{fg:06x}")
         output.parent.mkdir(parents=True, exist_ok=True)
-        image.save(output)
+        image.save(output, dpi=(72 * SCALE, 72 * SCALE))
         print(output.relative_to(ROOT) if output.is_relative_to(ROOT) else output)
     finally:
         try:
@@ -100,7 +104,7 @@ def main():
     path = next((path for path in candidates if Path(path).is_file()), None)
     if path is None:
         parser.error("No monospace font found; pass --font /path/to/font.ttf")
-    font = ImageFont.truetype(path, 18)
+    font = ImageFont.truetype(path, FONT_SIZE * SCALE)
     for source in sorted((ROOT / "scripts/screenshots").iterdir()):
         capture(source, args.output / f"{source.stem}-light.png", font)
 
