@@ -37,6 +37,13 @@ __Screenshots__
 
 </details>
 
+<details>
+<summary>Go</summary>
+
+<img src="screenshots/go-light.png" alt="Go — light" width="680">
+
+</details>
+
 ## ✨ Features
 
 - Enhanced Readability
