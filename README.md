@@ -18,21 +18,24 @@ __Screenshots__
 
 <details>
 <summary>Python</summary>
-<img width="619" alt="Screenshot 2025-05-04 at 17 21 12" src="https://github.com/user-attachments/assets/6a5fb016-8cfb-455a-a9c5-7562e7e0ce4e" />
+
+![Python — light](screenshots/python-light.png)
+
 </details>
 
 <details>
 <summary>JavaScript</summary>
-<img width="619" alt="Screenshot 2025-05-04 at 17 20 47" src="https://github.com/user-attachments/assets/e0981278-95d3-4e4b-8e57-6ffa805db234" />
+
+![JavaScript — light](screenshots/javascript-light.png)
 
 </details>
 
 <details>
 <summary>Rust</summary>
-<img width="619" alt="Screenshot 2025-05-04 at 17 21 30" src="https://github.com/user-attachments/assets/3af060e3-c9a2-4b97-8135-ed0f6581876a" />
+
+![Rust — light](screenshots/rust-light.png)
 
 </details>
-
 
 ## ✨ Features
 
